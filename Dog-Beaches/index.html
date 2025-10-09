@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Florida Dog Beaches Guide | Best Dog-Friendly Beaches in Florida</title>
+  <meta name="description" content="Discover the best dog-friendly beaches across Florida. From Jacksonville to the Keys, find the perfect beach for you and your pup with our Florida Dog Beaches Guide." />
+  <meta name="keywords" content="Florida dog beaches, dog friendly beaches Florida, Jacksonville dog beaches, Miami dog beaches, Florida Keys dog beach" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/styles.min.css">
+  <!-- If you have AdSense, place your script here (replace ca-pub-XXXXXXXXXXXX) -->
+  <!--
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXX" crossorigin="anonymous"></script>
+  -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebSite",
+    "name":"Florida Dog Beaches Guide",
+    "url":"https://dog-beach-guide.netlify.app/"
+  }
+  </script>
+</head>
+<body>
+  <header class="site-header container">
+    <div class="site-brand">🐾 Florida Dog Beaches</div>
+    <nav class="site-nav"><a href="index.html">Home</a></nav>
+  </header>
+
+  <div id="hero" class="hero" role="img" aria-label="Florida Dog Beaches hero">Find your next dog-friendly beach</div>
+
+  <main class="container">
+    <h1>Explore Dog-Friendly Beaches in Florida</h1>
+    <p class="lead">Florida offers miles of coastline and many beaches that welcome dogs. This guide groups beaches by region so you can find dog-friendly sand, swim spots, and local rules quickly.</p>
+
+    <div class="ads-block">
+      <!-- Ad placeholder: replace with AdSense unit when ready -->
+      <p>[Google Ads Placeholder]</p>
+    </div>
+
+    <section class="grid" aria-label="Regions">
+      <a class="card" href="north-florida.html">
+        <img class="card-img" alt="North Florida dog beach">
+        <div class="card-body"><h3>North Florida</h3><p>Jacksonville, St. Augustine, Amelia Island and more — Atlantic Coast dog beaches.</p></div>
+      </a>
+
+      <a class="card" href="central-florida.html">
+        <img class="card-img" alt="Central Florida dog beach">
+        <div class="card-body"><h3>Central Florida</h3><p>Canova, Cocoa, Daytona and Space Coast options for pups.</p></div>
+      </a>
+
+      <a class="card" href="south-florida.html">
+        <img class="card-img" alt="South Florida dog beach">
+        <div class="card-body"><h3>South Florida</h3><p>Haulover, Fort Lauderdale, Hollywood, Boca and Palm Beach areas.</p></div>
+      </a>
+
+      <a class="card" href="keys.html">
+        <img class="card-img" alt="Florida Keys dog beach">
+        <div class="card-body"><h3>Florida Keys</h3><p>Key West, Marathon, Islamorada — tropical beaches for dogs.</p></div>
+      </a>
+
+      <a class="card" href="panhandle.html">
+        <img class="card-img" alt="Panhandle dog beach">
+        <div class="card-body"><h3>Panhandle</h3><p>Pensacola, Destin, Panama City — the Emerald Coast with pups.</p></div>
+      </a>
+    </section>
+
+    <p class="note">Tip: always check local rules before heading to a beach — some areas require leashes or limit dog hours.</p>
+  </main>
+
+  <footer class="site-footer">
+    <nav class="site-nav"><a href="index.html">Home</a></nav>
+    <div class="container small">© 2025 Florida Dog Beaches Guide — <a href="privacy.html" style="color:#fff;text-decoration:underline">Privacy</a> • <a href="about.html" style="color:#fff;text-decoration:underline">About</a></div>
+  </footer>
+
+  <script src="/assets/js/randomize.min.js"></script>
+  <script>
+    // curated hero and card images (Unsplash photo IDs) — predictable, beach+dog visuals
+    const heroPool = [
+      "images/pexels-valeriiamiller-2702405.jpg",
+      "images/pexels-anntarazevich-8152009.jpg",
+      "images/pexels-dario-fernandez-ruz-6827317.jpg",
+      "images/pexels-barczakshoots-7947539.jpg",
+      "images/footprint-946189_1280.jpg"
+    ];
+
+    const cardPool = [
+  "images/pexels-cottonbro-5080767.jpg",
+  "images/pexels-freestockpro-319899.jpg",
+  "images/pexels-guy-kawasaki-783630-1654493.jpg",
+  "images/pexels-hatice-baran-153179658-14252556.jpg",
+  "images/pexels-kampus-8734431.jpg",
+  "images/pexels-miami302-16982801.jpg",
+  "images/pexels-rachel-claire-5865334.jpg",
+  "images/pexels-psomas-2089783.jpg",
+  "images/pexels-miami302-25036872.jpg",
+  "images/dog-5584135_1280.jpg",
+  "images/blonde-dog-4493887_1280.jpg"
+];
+
+
+    document.addEventListener('DOMContentLoaded', () => {
+      randomizeImages({
+        heroSelector: '#hero',
+        heroPool,
+        cardSelector: '.card-img',
+        cardPool
+      });
+    });
+  </script>
+</body>
+</html>
