@@ -6,65 +6,23 @@
   <title>Top 10 Dog Beach Toys & Games | Florida Dog Beaches Guide</title>
   <meta name="description" content="Top 10 dog beach toys and games — floating fetch toys, water-safe frisbees, durable balls, cooling mats, and more for safe play at Florida beaches." />
   <meta name="keywords" content="dog beach toys, floating dog toys, Chuckit, KONG Aqua, water frisbee, dog cooling mat, dog beach games" />
-
-  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-
-  <!-- Stylesheet -->
   <link rel="stylesheet" href="/assets/css/styles.min.css">
-
   <style>
-    body {
-      font-family: 'Inter', sans-serif;
-      background-color: #fdfdfd;
-      margin: 0;
-      color: #222;
-    }
-    header.site-header {
-      background-color: #0077b6;
-      color: white;
-      padding: 1rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .site-brand { font-weight: 700; font-size: 1.2rem; }
-    .site-nav a { color: #fff; text-decoration: none; font-weight: 600; }
-    .hero {
-      background-color: #00b4d8;
-      color: white;
-      text-align: center;
-      padding: 2rem;
-      font-size: 1.8rem;
-      font-weight: 700;
-    }
-    .container {
-      max-width: 1100px;
-      margin: auto;
-      padding: 1rem;
-    }
-    .lead {
-      color: #444;
-      font-size: 1.1rem;
-    }
-    .card-grid {
+    .toy-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 1.5rem;
-      margin-top: 2rem;
+      margin-top: 1rem;
     }
     .toy-card {
       background: #fff;
       border-radius: 12px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
       overflow: hidden;
-      display: flex;
-      flex-direction: column;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
       transition: transform 0.2s ease;
     }
-    .toy-card:hover {
-      transform: translateY(-4px);
-    }
+    .toy-card:hover { transform: translateY(-4px); }
     .toy-card img {
       width: 100%;
       height: 200px;
@@ -72,197 +30,101 @@
     }
     .toy-card-content {
       padding: 1rem;
-      flex-grow: 1;
     }
     .toy-card-content h3 {
-      margin-top: 0;
-      color: #0077b6;
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
     }
-    .toy-card-content p {
-      color: #333;
-      font-size: 0.95rem;
-    }
+    .toy-card-content p { font-size: 0.95rem; margin-bottom: 0.5rem; }
     .toy-card-content a {
-      color: #0096c7;
+      color: #0077cc;
+      text-decoration: underline;
       font-weight: 600;
     }
-    footer.site-footer {
-      background-color: #023e8a;
-      color: #fff;
-      text-align: center;
-      padding: 2rem 1rem;
+    .related-guides {
       margin-top: 3rem;
     }
-    footer .site-nav a { color: #fff; margin: 0 0.5rem; }
-    footer p.note {
-      margin-top: 1rem;
-      font-size: 0.9rem;
-      opacity: 0.8;
+    .related-guides .card {
+      display: flex;
+      flex-direction: column;
+      border-radius: 12px;
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+      background: #fff;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
     }
+    .related-guides .card-img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    .related-guides .card-body { padding: 1rem; }
   </style>
-
-  <!-- JSON-LD Schema -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "Top 10 Dog Beach Toys & Games",
-    "author": "Florida Dog Beaches Guide",
-    "publisher": {
-      "@type": "Organization",
-      "name": "Florida Dog Beaches Guide"
-    },
-    "description": "A practical roundup of the top 10 dog toys and games perfect for beach days — buoyant fetch toys, durable chewables, cooling gear, and portable hydration solutions."
-  }
-  </script>
 </head>
-
 <body>
   <header class="site-header container">
     <div class="site-brand">🐾 Florida Dog Beaches</div>
     <nav class="site-nav"><a href="index.html">Home</a></nav>
   </header>
 
-  <div id="hero" class="hero">Top 10 Dog Beach Toys & Games</div>
+  <div id="hero" class="hero" role="img" aria-label="Dogs playing at the beach">Top 10 Dog Beach Toys & Games</div>
 
   <main class="container">
     <h1>Top 10 Dog Beach Toys & Games</h1>
-    <p class="lead">These beach-friendly toys are selected for buoyancy, visibility, durability, and safety — ideal for fetch, water play, and keeping pups active on sunny Florida days.</p>
+    <p class="lead">These beach-friendly toys are perfect for keeping your pup active, cool, and safe. Each toy is water-ready, durable, and rated highly by dog owners for beach play.</p>
 
-    <div class="card-grid">
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8830784435507158"
+     crossorigin="anonymous"></script>
+    <ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8830784435507158"
+     data-ad-slot="8709924876"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 
-      <!-- 1 -->
+    <section aria-label="Top 10 dog beach toys" class="toy-grid">
       <div class="toy-card">
-        <img src="https://www.westpaw.com/wp-content/uploads/2023/02/Hurley_hero.jpg" alt="West Paw Hurley dog toy">
+        <img src="https://m.media-amazon.com/images/I/71lwXbqGx4L._AC_SL1500_.jpg" alt="West Paw Hurley Dog Toy">
         <div class="toy-card-content">
-          <h3>West Paw Hurley (Hybrid Ball/Bone)</h3>
-          <p>A hybrid design that’s part ball, part bone — floats, bounces, and is easy for dogs to grip. Non-toxic and durable.</p>
-          <a href="https://www.westpaw.com/products/hurley-dog-bone" target="_blank" rel="noopener">View on West Paw</a>
+          <h3>West Paw Hurley</h3>
+          <p>Part ball, part bone — this floatable toy is bouncy, tough, and gentle on teeth. Made in the USA from non-toxic material.</p>
+          <a href="https://www.amazon.com/West-Paw-Hurley-Durable-Bone/dp/B0010XR6WA" target="_blank" rel="noopener">View on Amazon</a>
         </div>
       </div>
 
-      <!-- 2 -->
       <div class="toy-card">
-        <img src="https://i5.walmartimages.com/asr/bd8badc7-f12a-4c9d-9a09-7eb1ebe6cdf3.8d22d704b76a1e8fce770e35adf5ce87.jpeg" alt="Canine Hardware Amphibious Bumper">
+        <img src="https://m.media-amazon.com/images/I/71klyU5d4ZL._AC_SL1500_.jpg" alt="Chuckit Amphibious Bumper">
         <div class="toy-card-content">
-          <h3>Canine Hardware Amphibious Bumper</h3>
-          <p>Floating bumper with rope handle for easy tossing. Foam + rubber construction ensures buoyancy and soft catches.</p>
-          <a href="https://www.walmart.com/ip/Canine-Hardware-18300-Amphibious-Bumper/25176212" target="_blank" rel="noopener">View on Walmart</a>
+          <h3>Chuckit! Amphibious Bumper</h3>
+          <p>Soft yet durable, this floating bumper toy has a rope handle for long throws and easy water retrieval.</p>
+          <a href="https://www.amazon.com/Chuckit-Amphibious-Bumper-Colors-Vary/dp/B00027467G" target="_blank" rel="noopener">View on Amazon</a>
         </div>
       </div>
 
-      <!-- 3 -->
       <div class="toy-card">
-        <img src="https://assets.petco.com/petco/image/upload/f_auto,q_auto,dpr_auto/v1/petco-prod/site/product/images/large/0614176-3.jpg" alt="KONG Aqua">
+        <img src="https://m.media-amazon.com/images/I/71qYv0Xj2LL._AC_SL1500_.jpg" alt="KONG Aqua Dog Toy">
         <div class="toy-card-content">
-          <h3>KONG Aqua (Floating Retrieval Toy)</h3>
-          <p>Floating version of the classic KONG — great for water fetch. You can stuff it with treats, but supervise during play.</p>
-          <a href="https://www.petco.com/shop/en/petcostore/product/kong-aqua-dog-toy-large-32190" target="_blank" rel="noopener">View on Petco</a>
+          <h3>KONG Aqua</h3>
+          <p>A floating version of the classic KONG, perfect for water fetch. The rope handle makes it easy to toss and retrieve.</p>
+          <a href="https://www.amazon.com/KONG-Aqua-Dog-Toy-Large/dp/B0002AR18E" target="_blank" rel="noopener">View on Amazon</a>
         </div>
       </div>
 
-      <!-- 4 -->
       <div class="toy-card">
-        <img src="https://ruffwear.com/cdn/shop/files/HydroPlane_Float_Toy_Heliotrope_081.jpg?v=1724682358" alt="Ruffwear Hydro Plane">
+        <img src="https://m.media-amazon.com/images/I/61rMQr6M7-L._AC_SL1500_.jpg" alt="Ruffwear Hydro Plane">
         <div class="toy-card-content">
-          <h3>Ruffwear Hydro Plane (Water Frisbee)</h3>
-          <p>A soft, floating disc with foam core and bright color. Gentle on teeth and visible on the water.</p>
-          <a href="https://ruffwear.com/products/hydro-plane-floating-dog-toy" target="_blank" rel="noopener">View on Ruffwear</a>
+          <h3>Ruffwear Hydro Plane</h3>
+          <p>Soft, buoyant flying disc that floats high on water. Easy to spot, gentle on mouths, and built to last.</p>
+          <a href="https://www.amazon.com/RUFFWEAR-Hydro-Plane-Floating-Large/dp/B00A2JGAZU" target="_blank" rel="noopener">View on Amazon</a>
         </div>
       </div>
 
-      <!-- 5 -->
       <div class="toy-card">
-        <img src="https://ruffwear.com/cdn/shop/files/Gnawt_a_Stick_Toy_60404_SafetyOrange_WEB.jpg?v=1724682327" alt="Ruffwear Gnawt-a-Stick">
+        <img src="https://m.media-amazon.com/images/I/61rIqlVwoEL._AC_SL1500_.jpg" alt="Ruffwear Gnawt-a-Stick">
         <div class="toy-card-content">
           <h3>Ruffwear Gnawt-a-Stick</h3>
-          <p>Modeled after driftwood — floats and bounces unpredictably. Ideal for water fetch and rugged chewers.</p>
-          <a href="https://ruffwear.com/products/gnawt-a-stick-60721" target="_blank" rel="noopener">View on Ruffwear</a>
-        </div>
-      </div>
-
-      <!-- 6 -->
-      <div class="toy-card">
-        <img src="https://cdn.shopify.com/s/files/1/0551/4041/4810/files/JollyPets_TugN_Toss_1024x1024.jpg?v=1685384020" alt="Jolly Pets Tug-n-Toss Ball">
-        <div class="toy-card-content">
-          <h3>Jolly Pets Tug-n-Toss Ball</h3>
-          <p>Durable, floatable ball that won’t deflate — even when punctured. Great for high-energy dogs.</p>
-          <a href="https://www.jollypets.com/products/tug-n-toss" target="_blank" rel="noopener">View on Jolly Pets</a>
-        </div>
-      </div>
-
-      <!-- 7 -->
-      <div class="toy-card">
-        <img src="https://i.etsystatic.com/33516043/r/il/81130f/4991103942/il_1140xN.4991103942_dz68.jpg" alt="Floating Paracord Dog Toy">
-        <div class="toy-card-content">
-          <h3>Floating Paracord Rope Toy</h3>
-          <p>Hand-braided paracord toy that floats — great for tug and fetch in the surf. Extremely durable and buoyant.</p>
-          <a href="https://www.etsy.com/listing/1835431351/floating-paracord-dog-toy-water-fetch" target="_blank" rel="noopener">View on Etsy</a>
-        </div>
-      </div>
-
-      <!-- 8 -->
-      <div class="toy-card">
-        <img src="https://assets.chewy.com/is/image/catalog/1822574._AC_SL1200_V1627022539_.jpg" alt="Worthy Dog Life’s a Beach toy">
-        <div class="toy-card-content">
-          <h3>The Worthy Dog “Life’s a Beach” Squeaky Toy</h3>
-          <p>A plush-meets-mesh hybrid toy with squeakers and a treat pocket. Fun for beach breaks and enrichment.</p>
-          <a href="https://www.chewy.com/worthy-dog-lifes-beach-squeaky-plush/dp/1822574" target="_blank" rel="noopener">View on Chewy</a>
-        </div>
-      </div>
-
-      <!-- 9 -->
-      <div class="toy-card">
-        <img src="https://m.media-amazon.com/images/I/71cGjXYwPrL._AC_SL1500_.jpg" alt="Collapsible Dog Water Bowl">
-        <div class="toy-card-content">
-          <h3>Collapsible Silicone Water Bowl</h3>
-          <p>Lightweight, foldable, and perfect for hydration during beach trips. An essential safety item for hot days.</p>
-          <a href="https://www.amazon.com/s?k=collapsible+dog+water+bowl" target="_blank" rel="noopener">Find on Amazon</a>
-        </div>
-      </div>
-
-      <!-- 10 -->
-      <div class="toy-card">
-        <img src="https://m.media-amazon.com/images/I/81yw3RTPsOL._AC_SL1500_.jpg" alt="Evapet Cooling Mat">
-        <div class="toy-card-content">
-          <h3>Evapet Cooling Mat</h3>
-          <p>Water-activated cooling pad helps your dog rest comfortably after a beach play session. Compact and easy to rinse.</p>
-          <a href="https://www.amazon.com/s?k=Evapet+cooling+mat+dog" target="_blank" rel="noopener">Find on Amazon</a>
-        </div>
-      </div>
-
-    </div>
-
-    <br><hr><br>
-
-    <h2>Beach Toy Safety Tips</h2>
-    <ul>
-      <li>Supervise play — salt and sand can hide choking hazards.</li>
-      <li>Rinse toys and your dog with fresh water after every trip.</li>
-      <li>Choose toy sizes suited to your dog’s mouth to prevent swallowing.</li>
-      <li>Inspect and replace worn or damaged toys promptly.</li>
-    </ul>
-
-    <br><hr><br>
-
-    <a class="card" href="DogBeachPackingList.html">
-      <img class="card-img" src="images/pexels-freestockpro-319899.jpg" alt="Dog Beach Packing List">
-      <div class="card-body">
-        <h2>Dog Beach Packing List: What to Bring for a Safe and Fun Day</h2>
-        <p>Don’t forget water, shade, first aid items, and a collapsible bowl — especially important for busy beach days.</p>
-      </div>
-    </a>
-
-  </main>
-
-  <footer class="site-footer">
-    <nav class="site-nav"><a href="index.html">Home</a></nav>
-    <div class="container small">
-      © 2025 Florida Dog Beaches Guide — 
-      <a href="privacy.html" style="color:#fff;text-decoration:underline">Privacy</a> • 
-      <a href="about.html" style="color:#fff;text-decoration:underline">About</a>
-    </div>
-    <p class="note">Tip: Rinse toys and gear after each beach visit to help them last and keep your pup safe.</p>
-  </footer>
-</body>
-</html>
+          <p>Modeled after driftwood, this rubber stick floats at an angle for visibility and bounces unpredictably for fun.</p>
+          <a href="https://www.amazon.com/RUFFWEAR-Gnawt-S
