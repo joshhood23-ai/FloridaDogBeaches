@@ -262,5 +262,45 @@
       randomContainer.appendChild(randomCard.cloneNode(true));
     });
   </script>
+
+<script>
+(function(){
+  var css = `
+    /* injected override */
+    html body .container .toy-grid .toy-card > img,
+    html body .container .toy-grid .toy-card img,
+    html body .container .grid .card > img,
+    html body .container .grid .card img,
+    html body .related-guides .card > .card-img,
+    html body .related-guides .card .card-img {
+      display: block !important;
+      width: 100% !important;
+      height: 220px !important;
+      max-height: 220px !important;
+      object-fit: cover !important;
+      object-position: center center !important;
+      background-color: #f8f8f8 !important;
+    }
+    html body .container .toy-grid .toy-card,
+    html body .container .grid .card,
+    html body .related-guides .card {
+      display: flex !important;
+      flex-direction: column !important;
+    }
+    @media (max-width:420px){
+      html body .container .toy-grid .toy-card > img,
+      html body .container .grid .card > img,
+      html body .related-guides .card > .card-img {
+        height: 180px !important;
+        max-height: 180px !important;
+      }
+    }
+  `;
+  var s = document.createElement('style'); s.type = 'text/css'; s.appendChild(document.createTextNode(css));
+  document.head.appendChild(s);
+})();
+</script>
+  
 </body>
 </html>
+
