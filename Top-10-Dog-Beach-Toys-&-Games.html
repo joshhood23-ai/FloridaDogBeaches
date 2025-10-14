@@ -15,21 +15,37 @@
       gap: 1.5rem;
       margin-top: 1rem;
     }
+
+    /* Card base */
     .toy-card {
       background: #fff;
       border-radius: 12px;
       overflow: hidden;
       box-shadow: 0 4px 12px rgba(0,0,0,0.08);
       transition: transform 0.2s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
     }
     .toy-card:hover { transform: translateY(-4px); }
+
+    /* Image behavior: always fill, keep center, consistent height */
     .toy-card img {
       width: 100%;
-      height: 200px;
+      height: 220px;
       object-fit: cover;
+      object-position: center;
+      display: block;
+      background: #f8f8f8;
     }
+
     .toy-card-content {
       padding: 1rem;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
     .toy-card-content h3 {
       font-size: 1.1rem;
@@ -41,9 +57,12 @@
       text-decoration: underline;
       font-weight: 600;
     }
+
     .related-guides {
       margin-top: 3rem;
     }
+
+    /* Related cards */
     .related-guides .card {
       display: flex;
       flex-direction: column;
@@ -53,13 +72,17 @@
       color: inherit;
       background: #fff;
       box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      height: 100%;
     }
     .related-guides .card-img {
       width: 100%;
-      height: 200px;
+      height: 220px;
       object-fit: cover;
+      object-position: center;
+      display: block;
+      background: #f8f8f8;
     }
-    .related-guides .card-body { padding: 1rem; }
+    .related-guides .card-body { padding: 1rem; display:flex; flex-direction:column; justify-content:space-between; }
   </style>
 </head>
 <body>
@@ -242,10 +265,3 @@
   </script>
 </body>
 </html>
-
-
-
-
-
-
-
