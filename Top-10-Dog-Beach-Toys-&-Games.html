@@ -82,7 +82,56 @@
       .related-guides .card-img,
       .card img { height: 180px !important; max-height:180px !important; }
     }
-  </style>
+  
+
+<style id="image-fix-final">
+/* ✅ FINAL IMAGE FIX — stronger and guaranteed to override styles.min.css */
+
+.toy-card img,
+.related-guides .card-img,
+.related-guides .card img,
+.card img {
+  display: block !important;
+  width: 100% !important;
+  height: 220px !important;
+  object-fit: cover !important;
+  object-position: center center !important;
+  background-color: #f8f8f8 !important;
+  border: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* Make all toy and guide cards flex evenly */
+.toy-card,
+.related-guides .card {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  height: 100% !important;
+}
+
+/* Ensure content aligns properly */
+.toy-card-content,
+.card-body {
+  flex-grow: 1 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  padding: 1rem !important;
+}
+
+/* Mobile adjustments */
+@media (max-width: 600px) {
+  .toy-card img,
+  .related-guides .card-img,
+  .card img {
+    height: 180px !important;
+  }
+}
+</style>
+
+  
 </head>
 <body>
   <header class="site-header container">
@@ -263,55 +312,9 @@
     });
   </script>
 
-<style id="image-fix">
-/* FORCE all card images to be even, centered, and cover the box */
-.card img,
-.toy-card img,
-.related-guides img,
-.grid .card img,
-.toy-grid .toy-card img,
-.related-guides .card-img {
-  display: block !important;
-  width: 100% !important;
-  height: 220px !important;
-  max-height: 220px !important;
-  object-fit: cover !important;
-  object-position: center center !important;
-  background-color: #f8f8f8 !important;
-  border: none !important;
-  padding: 0 !important;
-  margin: 0 auto !important;
-}
-
-/* Make card layout consistent even with different text sizes */
-.card,
-.toy-card {
-  display: flex !important;
-  flex-direction: column !important;
-  justify-content: space-between !important;
-}
-
-.card-body,
-.toy-card-content {
-  flex: 1 1 auto !important;
-  display: flex !important;
-  flex-direction: column !important;
-  justify-content: space-between !important;
-}
-
-/* Responsive image size for small screens */
-@media (max-width: 600px) {
-  .card img,
-  .toy-card img,
-  .related-guides img {
-    height: 180px !important;
-    max-height: 180px !important;
-  }
-}
-</style>
-
   
 </body>
 </html>
+
 
 
