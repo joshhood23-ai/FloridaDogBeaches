@@ -263,44 +263,55 @@
     });
   </script>
 
-<script>
-(function(){
-  var css = `
-    /* injected override */
-    html body .container .toy-grid .toy-card > img,
-    html body .container .toy-grid .toy-card img,
-    html body .container .grid .card > img,
-    html body .container .grid .card img,
-    html body .related-guides .card > .card-img,
-    html body .related-guides .card .card-img {
-      display: block !important;
-      width: 100% !important;
-      height: 220px !important;
-      max-height: 220px !important;
-      object-fit: cover !important;
-      object-position: center center !important;
-      background-color: #f8f8f8 !important;
-    }
-    html body .container .toy-grid .toy-card,
-    html body .container .grid .card,
-    html body .related-guides .card {
-      display: flex !important;
-      flex-direction: column !important;
-    }
-    @media (max-width:420px){
-      html body .container .toy-grid .toy-card > img,
-      html body .container .grid .card > img,
-      html body .related-guides .card > .card-img {
-        height: 180px !important;
-        max-height: 180px !important;
-      }
-    }
-  `;
-  var s = document.createElement('style'); s.type = 'text/css'; s.appendChild(document.createTextNode(css));
-  document.head.appendChild(s);
-})();
-</script>
+<style id="image-fix">
+/* FORCE all card images to be even, centered, and cover the box */
+.card img,
+.toy-card img,
+.related-guides img,
+.grid .card img,
+.toy-grid .toy-card img,
+.related-guides .card-img {
+  display: block !important;
+  width: 100% !important;
+  height: 220px !important;
+  max-height: 220px !important;
+  object-fit: cover !important;
+  object-position: center center !important;
+  background-color: #f8f8f8 !important;
+  border: none !important;
+  padding: 0 !important;
+  margin: 0 auto !important;
+}
+
+/* Make card layout consistent even with different text sizes */
+.card,
+.toy-card {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+}
+
+.card-body,
+.toy-card-content {
+  flex: 1 1 auto !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+}
+
+/* Responsive image size for small screens */
+@media (max-width: 600px) {
+  .card img,
+  .toy-card img,
+  .related-guides img {
+    height: 180px !important;
+    max-height: 180px !important;
+  }
+}
+</style>
+
   
 </body>
 </html>
+
 
