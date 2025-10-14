@@ -9,14 +9,17 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/assets/css/styles.min.css">
   <style>
+    /* Basic grid */
     .toy-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 1.5rem;
       margin-top: 1rem;
+      align-items: stretch; /* ensure grid children stretch */
+      box-sizing: border-box;
     }
 
-    /* Card base */
+    /* Card base - keep cards same layout and allow image + content to align */
     .toy-card {
       background: #fff;
       border-radius: 12px;
@@ -25,44 +28,50 @@
       transition: transform 0.2s ease;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
-      height: 100%;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      min-height: 100%; /* let grid determine height */
     }
     .toy-card:hover { transform: translateY(-4px); }
 
-    /* Image behavior: always fill, keep center, consistent height */
+    /* Highly specific image rules to override site CSS if needed */
+    .toy-card > img,
     .toy-card img {
-      width: 100%;
-      height: 220px;
-      object-fit: cover;
-      object-position: center;
-      display: block;
+      display: block !important;
+      width: 100% !important;
+      height: 220px !important;
+      max-height: 220px !important;
+      object-fit: cover !important;
+      object-position: center center !important;
       background: #f8f8f8;
+      -o-object-fit: cover;
     }
 
+    /* Content area */
     .toy-card-content {
       padding: 1rem;
-      flex-grow: 1;
+      flex: 1 1 auto;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      box-sizing: border-box;
     }
     .toy-card-content h3 {
       font-size: 1.1rem;
-      margin-bottom: 0.5rem;
+      margin: 0 0 0.5rem 0;
     }
-    .toy-card-content p { font-size: 0.95rem; margin-bottom: 0.5rem; }
+    .toy-card-content p { font-size: 0.95rem; margin: 0 0 0.75rem 0; }
     .toy-card-content a {
       color: #0077cc;
       text-decoration: underline;
       font-weight: 600;
+      align-self: flex-start;
     }
 
+    /* Related guides - keep consistent with toy cards */
     .related-guides {
       margin-top: 3rem;
     }
-
-    /* Related cards */
     .related-guides .card {
       display: flex;
       flex-direction: column;
@@ -72,17 +81,23 @@
       color: inherit;
       background: #fff;
       box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-      height: 100%;
     }
+    .related-guides .card > .card-img,
     .related-guides .card-img {
-      width: 100%;
-      height: 220px;
-      object-fit: cover;
-      object-position: center;
-      display: block;
+      display: block !important;
+      width: 100% !important;
+      height: 220px !important;
+      max-height: 220px !important;
+      object-fit: cover !important;
+      object-position: center center !important;
       background: #f8f8f8;
     }
-    .related-guides .card-body { padding: 1rem; display:flex; flex-direction:column; justify-content:space-between; }
+    .related-guides .card-body { padding: 1rem; display:flex; flex-direction:column; justify-content:space-between; box-sizing:border-box; }
+    /* small responsive tweak: smaller images on narrow screens */
+    @media (max-width:420px){
+      .toy-card > img,
+      .related-guides .card-img { height: 180px !important; max-height:180px !important; }
+    }
   </style>
 </head>
 <body>
@@ -112,8 +127,10 @@
       <div class="toy-card">
         <img src="https://m.media-amazon.com/images/I/61gyI1wiQLL._AC_UL320_.jpg" alt="West Paw Hurley Dog Toy">
         <div class="toy-card-content">
-          <h3>West Paw Hurley</h3>
-          <p>Part ball, part bone — this floatable toy is bouncy, tough, and gentle on teeth. Made in the USA from non-toxic material.</p>
+          <div>
+            <h3>West Paw Hurley</h3>
+            <p>Part ball, part bone — this floatable toy is bouncy, tough, and gentle on teeth. Made in the USA from non-toxic material.</p>
+          </div>
           <a href="https://www.amazon.com/s?k=West-Paw-Hurley-Durable-Bone" target="_blank" rel="noopener">View on Amazon</a>
         </div>
       </div>
@@ -121,8 +138,10 @@
       <div class="toy-card">
         <img src="https://m.media-amazon.com/images/I/711qHuHB4lL._AC_UL320_.jpg" alt="Chuckit Amphibious Bumper">
         <div class="toy-card-content">
-          <h3>Chuckit! Amphibious Bumper</h3>
-          <p>Soft yet durable, this floating bumper toy has a rope handle for long throws and easy water retrieval.</p>
+          <div>
+            <h3>Chuckit! Amphibious Bumper</h3>
+            <p>Soft yet durable, this floating bumper toy has a rope handle for long throws and easy water retrieval.</p>
+          </div>
           <a href="https://www.amazon.com/Chuckit-Amphibious-Bumper-Colors-Vary/dp/B00027467G" target="_blank" rel="noopener">View on Amazon</a>
         </div>
       </div>
@@ -130,8 +149,10 @@
       <div class="toy-card">
         <img src="https://m.media-amazon.com/images/I/810cV1x+syL._AC_UL320_.jpg" alt="KONG Aqua Dog Toy">
         <div class="toy-card-content">
-          <h3>KONG Aqua</h3>
-          <p>A floating version of the classic KONG, perfect for water fetch. The rope handle makes it easy to toss and retrieve.</p>
+          <div>
+            <h3>KONG Aqua</h3>
+            <p>A floating version of the classic KONG, perfect for water fetch. The rope handle makes it easy to toss and retrieve.</p>
+          </div>
           <a href="https://www.amazon.com/s?k=KONG-Aqua-Dog-Toy-Large" target="_blank" rel="noopener">View on Amazon</a>
         </div>
       </div>
@@ -139,8 +160,10 @@
       <div class="toy-card">
         <img src="https://m.media-amazon.com/images/I/71GMoDSrglL._AC_UL320_.jpg" alt="Ruffwear Hydro Plane">
         <div class="toy-card-content">
-          <h3>Ruffwear Hydro Plane</h3>
-          <p>Soft, buoyant flying disc that floats high on water. Easy to spot, gentle on mouths, and built to last.</p>
+          <div>
+            <h3>Ruffwear Hydro Plane</h3>
+            <p>Soft, buoyant flying disc that floats high on water. Easy to spot, gentle on mouths, and built to last.</p>
+          </div>
           <a href="https://www.amazon.com/s?k=RUFFWEAR-Hydro-Plane-Floating" target="_blank" rel="noopener">View on Amazon</a>
         </div>
       </div>
@@ -148,8 +171,10 @@
       <div class="toy-card">
         <img src="https://m.media-amazon.com/images/I/51iEvjVayWL._AC_UL320_.jpg" alt="Ruffwear Gnawt-a-Stick">
         <div class="toy-card-content">
-          <h3>Ruffwear Gnawt-a-Stick</h3>
-          <p>Modeled after driftwood, this rubber stick floats at an angle for visibility and bounces unpredictably for fun.</p>
+          <div>
+            <h3>Ruffwear Gnawt-a-Stick</h3>
+            <p>Modeled after driftwood, this rubber stick floats at an angle for visibility and bounces unpredictably for fun.</p>
+          </div>
           <a href="https://www.amazon.com/s?k=RUFFWEAR-Gnawt-Stick-Floating-Toy" target="_blank" rel="noopener">View on Amazon</a>
         </div>
       </div>
@@ -157,8 +182,10 @@
       <div class="toy-card">
         <img src="https://m.media-amazon.com/images/G/01/apparel/rcxgs/tile._CB483369110_.gif" alt="Jolly Pets Tug-n-Toss Ball">
         <div class="toy-card-content">
-          <h3>Jolly Pets Tug-n-Toss Ball</h3>
-          <p>Virtually indestructible — this floatable ball never deflates, even if punctured. Perfect for high-energy dogs.</p>
+          <div>
+            <h3>Jolly Pets Tug-n-Toss Ball</h3>
+            <p>Virtually indestructible — this floatable ball never deflates, even if punctured. Perfect for high-energy dogs.</p>
+          </div>
           <a href="https://www.amazon.com/s?k=Jolly-Pets-Tug-n-Toss-Ball&i=pets&crid=26M3WCLTVEWBW&sprefix=jolly-pets-tug-n-toss-ball%2Cpets%2C76&ref=nb_sb_noss" target="_blank" rel="noopener">View on Amazon</a>
         </div>
       </div>
@@ -166,8 +193,10 @@
       <div class="toy-card">
         <img src="https://www.amazon.com/sspa/click?ie=UTF8&spc=MTo4MTg5Mjk2MDcyMjkwMTQ3OjE3NjA0MzQ3MzQ6c3Bfc2VhcmNoX3RoZW1hdGljOjMwMDA3MzI3Nzc3OTcwMjo6Mjo6&url=%2FBarida-Pet-Tough-Rope-Toys%2Fdp%2FB0B2FGWGTC%2Fref%3Dsxin_16_pa_sp_search_thematic_sspa%3Fcontent-id%3Damzn1.sym.9ce0d71e-7aca-4397-8822-32313a4aff8e%253Aamzn1.sym.9ce0d71e-7aca-4397-8822-32313a4aff8e%26crid%3D2UJ15F991S1O9%26cv_ct_cx%3DFloating%2BRope%2BDog%2BToy%2BWater%26keywords%3DFloating%2BRope%2BDog%2BToy%2BWater%26pd_rd_i%3DB0B2FGWGTC%26pd_rd_r%3D1aec0401-f171-42c7-bf4b-ff8ab970e8d7%26pd_rd_w%3DtxyrL%26pd_rd_wg%3DJ4Yez%26pf_rd_p%3D9ce0d71e-7aca-4397-8822-32313a4aff8e%26pf_rd_r%3D8T6A5TWHECAXF03NPCKB%26qid%3D1760434734%26sbo%3DRZvfv%252F%252FHxDF%252BO5021pAnSA%253D%253D%26sprefix%3Dfloating%2Brope%2Bdog%2Btoy%2Bwater%252Caps%252C101%26sr%3D1-3-6024b2a3-78e4-4fed-8fed-e1613be3bcce-spons%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9zZWFyY2hfdGhlbWF0aWM%26psc%3D1&aref=4rPxZEvBgC" alt="Floating Rope Toy for Dogs">
         <div class="toy-card-content">
-          <h3>Floating Rope Toy</h3>
-          <p>Braided and buoyant — ideal for tug and fetch in water.</p>
+          <div>
+            <h3>Floating Rope Toy</h3>
+            <p>Braided and buoyant — ideal for tug and fetch in water.</p>
+          </div>
           <a href="https://www.amazon.com/sspa/click?ie=UTF8&spc=MTo4MTg5Mjk2MDcyMjkwMTQ3OjE3NjA0MzQ3MzQ6c3Bfc2VhcmNoX3RoZW1hdGljOjMwMDA3MzI3Nzc3OTcwMjo6Mjo6&url=%2FBarida-Pet-Tough-Rope-Toys%2Fdp%2FB0B2FGWGTC%2Fref%3Dsxin_16_pa_sp_search_thematic_sspa%3Fcontent-id%3Damzn1.sym.9ce0d71e-7aca-4397-8822-32313a4aff8e%253Aamzn1.sym.9ce0d71e-7aca-4397-8822-32313a4aff8e%26crid%3D2UJ15F991S1O9%26cv_ct_cx%3DFloating%2BRope%2BDog%2BToy%2BWater%26keywords%3DFloating%2BRope%2BDog%2BToy%2BWater%26pd_rd_i%3DB0B2FGWGTC%26pd_rd_r%3D1aec0401-f171-42c7-bf4b-ff8ab970e8d7%26pd_rd_w%3DtxyrL%26pd_rd_wg%3DJ4Yez%26pf_rd_p%3D9ce0d71e-7aca-4397-8822-32313a4aff8e%26pf_rd_r%3D8T6A5TWHECAXF03NPCKB%26qid%3D1760434734%26sbo%3DRZvfv%252F%252FHxDF%252BO5021pAnSA%253D%253D%26sprefix%3Dfloating%2Brope%2Bdog%2Btoy%2Bwater%252Caps%252C101%26sr%3D1-3-6024b2a3-78e4-4fed-8fed-e1613be3bcce-spons%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9zZWFyY2hfdGhlbWF0aWM%26psc%3D1&aref=4rPxZEvBgC" target="_blank" rel="noopener">View on Amazon</a>
         </div>
       </div>
@@ -175,8 +204,10 @@
       <div class="toy-card">
         <img src="https://m.media-amazon.com/images/I/71gja8vhTHL._AC_UL320_.jpg" alt="Worthy Dog Life’s a Beach Toy">
         <div class="toy-card-content">
-          <h3>Worthy Dog “Life’s a Beach” Squeaky Toy</h3>
-          <p>Plush squeaky toy with mesh reinforcement — soft enough for cuddles, tough enough for play.</p>
+          <div>
+            <h3>Worthy Dog “Life’s a Beach” Squeaky Toy</h3>
+            <p>Plush squeaky toy with mesh reinforcement — soft enough for cuddles, tough enough for play.</p>
+          </div>
           <a href="https://www.amazon.com/s?k=Worthy-Dog-Lifes-Beach-Plush" target="_blank" rel="noopener">View on Amazon</a>
         </div>
       </div>
@@ -184,8 +215,10 @@
       <div class="toy-card">
         <img src="https://m.media-amazon.com/images/I/614gBAgps-L._AC_UL320_.jpg" alt="Collapsible Dog Bowl">
         <div class="toy-card-content">
-          <h3>Collapsible Silicone Water Bowl</h3>
-          <p>Portable, foldable, and easy to rinse — perfect for staying hydrated on hot beach days.</p>
+          <div>
+            <h3>Collapsible Silicone Water Bowl</h3>
+            <p>Portable, foldable, and easy to rinse — perfect for staying hydrated on hot beach days.</p>
+          </div>
           <a href="https://www.amazon.com/s?k=collapsible+dog+water+bowl" target="_blank" rel="noopener">Find on Amazon</a>
         </div>
       </div>
@@ -193,8 +226,10 @@
       <div class="toy-card">
         <img src="https://m.media-amazon.com/images/I/61s6ANcD-jL._AC_UL320_.jpg" alt="Evapet Cooling Mat">
         <div class="toy-card-content">
-          <h3>Evapet Cooling Mat</h3>
-          <p>Water-activated cooling pad helps keep dogs comfortable and safe from overheating after play.</p>
+          <div>
+            <h3>Evapet Cooling Mat</h3>
+            <p>Water-activated cooling pad helps keep dogs comfortable and safe from overheating after play.</p>
+          </div>
           <a href="https://www.amazon.com/s?k=Evapet+cooling+mat+dog" target="_blank" rel="noopener">Find on Amazon</a>
         </div>
       </div>
