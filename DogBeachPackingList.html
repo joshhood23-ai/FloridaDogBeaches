@@ -107,37 +107,93 @@
     <p class="note">A well-packed beach bag makes your trip stress-free and safe. Follow this checklist to keep your pup happy, healthy, and coming back for more beach adventures.</p>
 
    <section class="related-guides">
-      <hr>
-      <h2>More Dog Beach Guides</h2>
-      <hr>
-      <div id="all-guides">
-        <a class="card" href="unfriendly-dogs.html">
-          <img class="card-img" src="pexels-valeriiamiller-2702405.jpg" alt="Dog Beach Packing List">
-          <div class="card-body">
-            <h2>How to Handle Unfriendly Dogs or Crowded Beaches</h2>
-            <p>Learn how to safely handle unfriendly dogs and crowded beaches in Florida. Tips for dog owners to ensure calm, positive beach experiences for everyone.</p>
-          </div>
-        </a>
+  <hr>
+  <h2>More Dog Beach Guides</h2>
+  <hr>
 
-        <a class="card" href="quick-tips.html">
-          <img class="card-img" src="pexels-kampus-8734431.jpg" alt="Dog Beach Quick Tips">
-          <div class="card-body">
-            <h2>Dog Beach Quick Tips</h2>
-            <p>Smart advice and etiquette for a perfect day on Florida’s best dog beaches.</p>
-          </div>
-        </a>
-
-        <a class="card" href="Top-10-Dog-Beach-Toys-&-Games.html">
-          <img class="card-img" src="pexels-rachel-claire-5865334.jpg" alt="Florida Dog Beaches">
-          <div class="card-body">
-            <h2>Top 10 Dog Beach Toys & Games</h2>
-            <p>Top 10 dog beach toys and games — floating fetch toys, water-safe frisbees, durable balls, cooling mats, and more for safe play at Florida beaches.</p>
-          </div>
-        </a>
+  <!-- keep this as the hidden source of guide cards -->
+  <div id="all-guides" style="display:none;">
+    <a class="card" href="unfriendly-dogs.html">
+      <img class="card-img" src="pexels-valeriiamiller-2702405.jpg" alt="How to Handle Unfriendly Dogs">
+      <div class="card-body">
+        <h2>How to Handle Unfriendly Dogs or Crowded Beaches</h2>
+        <p>Learn how to safely handle unfriendly dogs and crowded beaches in Florida. Tips for dog owners to ensure calm, positive beach experiences for everyone.</p>
       </div>
+    </a>
 
-      <div id="random-guides" class="card-grid"></div>
-    </section>
+    <a class="card" href="quick-tips.html">
+      <img class="card-img" src="pexels-kampus-8734431.jpg" alt="Dog Beach Quick Tips">
+      <div class="card-body">
+        <h2>Dog Beach Quick Tips</h2>
+        <p>Smart advice and etiquette for a perfect day on Florida’s best dog beaches.</p>
+      </div>
+    </a>
+
+    <a class="card" href="Top-10-Dog-Beach-Toys-&-Games.html">
+      <img class="card-img" src="pexels-rachel-claire-5865334.jpg" alt="Top 10 Dog Beach Toys">
+      <div class="card-body">
+        <h2>Top 10 Dog Beach Toys & Games</h2>
+        <p>Top 10 dog beach toys and games — floating fetch toys, water-safe frisbees, durable balls, cooling mats, and more for safe play at Florida beaches.</p>
+      </div>
+    </a>
+  </div>
+
+  <!-- visible grid where random cards will be shown -->
+  <div id="random-guides" class="card-grid" aria-live="polite"></div>
+</section>
+
+<!-- Put this script AFTER the above HTML and after any other scripts that might
+     manage guides. It includes guards so it doesn't duplicate content. -->
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    try {
+      const randomGuides = document.getElementById('random-guides');
+      const allGuidesContainer = document.getElementById('all-guides');
+
+      // If randomGuides already has children, do nothing (prevents double-run)
+      if (!randomGuides || randomGuides.children.length > 0) return;
+
+      // Hide the source container (in case CSS changed elsewhere)
+      if (allGuidesContainer) allGuidesContainer.style.display = 'none';
+
+      // Grab the cards from the hidden source
+      const cards = allGuidesContainer ? Array.from(allGuidesContainer.querySelectorAll('.card')) : [];
+      if (cards.length === 0) return;
+
+      // Shuffle function (Fisher-Yates)
+      function shuffle(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [array[i], array[j]] = [array[j], array[i]];
+        }
+        return array;
+      }
+
+      const numToShow = 3; // change this number to show more/less
+      const shuffled = shuffle(cards.slice()); // operate on a copy
+      const selected = shuffled.slice(0, Math.min(numToShow, shuffled.length));
+
+      // Append clones so the source stays intact
+      selected.forEach(card => {
+        const clone = card.cloneNode(true);
+        randomGuides.appendChild(clone);
+      });
+
+      // If you want the visible cards to have a slight fade-in:
+      requestAnimationFrame(() => {
+        randomGuides.querySelectorAll('.card').forEach((c, i) => {
+          c.style.opacity = '0';
+          c.style.transition = 'opacity 220ms ease ' + (i * 80) + 'ms';
+          requestAnimationFrame(() => c.style.opacity = '1');
+        });
+      });
+    } catch (err) {
+      // fail silently (don't break the rest of the page)
+      console.error('Guide randomizer error:', err);
+    }
+  });
+</script>
+
     
   </main>
 
@@ -170,4 +226,5 @@
   </script>
 </body>
 </html>
+
 
