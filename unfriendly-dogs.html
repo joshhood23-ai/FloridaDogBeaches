@@ -94,6 +94,43 @@
     <p class="note">Every dog deserves a fun, peaceful beach experience. By reading body language and giving space, you’ll keep both tails wagging — even on Florida’s busiest shores.</p>
 
   </main>
+  <section class="related-guides">
+      <hr>
+      <h2>More Guides and Quick Tips</h2>
+      <hr>
+
+      <!-- Hidden source of guide cards -->
+      <div id="all-guides" style="display:none;">
+        <a class="card" href="unfriendly-dogs.html">
+          <img class="card-img" src="pexels-valeriiamiller-2702405.jpg" alt="How to Handle Unfriendly Dogs">
+          <div class="card-body">
+            <h2>How to Handle Unfriendly Dogs or Crowded Beaches</h2>
+            <p>Learn how to safely handle unfriendly dogs and crowded beaches in Florida. Tips for dog owners to ensure calm, positive beach experiences for everyone.</p>
+          </div>
+        </a>
+
+        <a class="card" href="DogBeachPackingList.html">
+          <img class="card-img" src="pexels-kampus-8734431.jpg" alt="Dog Beach Quick Tips">
+          <div class="card-body">
+            <h2>Dog Beach Packing List: What to Bring for a Safe and Fun Day </h2>
+            <p>Heading to the dog beach? Check out this essential packing list to make sure your pup has everything for a perfect day in the sun.</p>
+          </div>
+        </a>
+
+        <a class="card" href="Top-10-Dog-Beach-Toys-&-Games.html">
+          <img class="card-img" src="pexels-rachel-claire-5865334.jpg" alt="Top 10 Dog Beach Toys">
+          <div class="card-body">
+            <h2>Top 10 Dog Beach Toys & Games</h2>
+            <p>Top 10 dog beach toys and games — floating fetch toys, water-safe frisbees, durable balls, cooling mats, and more for safe play at Florida beaches.</p>
+          </div>
+        </a>
+      </div>
+
+      <!-- Visible grid for random guide -->
+      <div id="random-guides" class="card-grid" aria-live="polite"></div>
+    </section>
+
+  </main>
 
   <footer class="site-footer">
     <nav class="site-nav"><a href="index.html">Home</a></nav>
@@ -103,22 +140,37 @@
     </div>
   </footer>
 
-  <script src="/assets/js/randomize.min.js"></script>
+  <!-- Hero + Randomizer Script -->
   <script>
-    const heroPool = [
-      "images/pexels-anntarazevich-8152009.jpg",
-      "images/pexels-dario-fernandez-ruz-6827317.jpg",
-      "images/pexels-barczakshoots-7947539.jpg",
-      "images/pexels-valeriiamiller-2702405.jpg",
-      "images/footprint-946189_1280.jpg"
-    ];
-
     document.addEventListener('DOMContentLoaded', () => {
-      randomizeImages({
-        heroSelector: '#hero',
-        heroPool
-      });
+      // 🎨 Randomize hero image
+      const heroPool = [
+        "images/pexels-valeriiamiller-2702405.jpg",
+        "images/pexels-dario-fernandez-ruz-6827317.jpg",
+        "images/pexels-barczakshoots-7947539.jpg",
+        "footprint-946189_1280.jpg",
+        "images/pexels-miami302-16982801.jpg"
+      ];
+      const hero = document.getElementById('hero');
+      if (hero) {
+        const img = heroPool[Math.floor(Math.random() * heroPool.length)];
+        hero.style.backgroundImage = `url(${img})`;
+      }
+
+      // 🐾 Randomize one guide card
+      const allGuidesContainer = document.getElementById('all-guides');
+      const randomGuides = document.getElementById('random-guides');
+      if (!allGuidesContainer || !randomGuides) return;
+
+      const cards = Array.from(allGuidesContainer.querySelectorAll('.card'));
+      if (cards.length === 0) return;
+
+      const randomCard = cards[Math.floor(Math.random() * cards.length)];
+      const clone = randomCard.cloneNode(true);
+      randomGuides.appendChild(clone);
     });
   </script>
+
 </body>
 </html>
+
