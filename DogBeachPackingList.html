@@ -21,6 +21,29 @@
       transition: background 0.2s ease;
     }
     .directions-btn:hover { background: #005fa3; }
+    .card-grid {
+      display: grid;
+      gap: 1.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      margin-top: 1.5rem;
+    }
+    .card {
+      display: block;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      text-decoration: none;
+      color: inherit;
+      background: #fff;
+      transition: transform 0.2s ease;
+    }
+    .card:hover { transform: translateY(-4px); }
+    .card-img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+    .card-body { padding: 1rem; }
   </style>
 </head>
 <body>
@@ -87,11 +110,11 @@
       <hr>
       <h2>More Dog Beach Guides</h2>
       <hr>
-      <div id="all-guides" style="display:none;">
+      <div id="all-guides">
         <a class="card" href="unfriendly-dogs.html">
           <img class="card-img" src="pexels-valeriiamiller-2702405.jpg" alt="Dog Beach Packing List">
           <div class="card-body">
-            <h2>How to Handle Unfriendly Dogs or Crowded Beaches </h2>
+            <h2>How to Handle Unfriendly Dogs or Crowded Beaches</h2>
             <p>Learn how to safely handle unfriendly dogs and crowded beaches in Florida. Tips for dog owners to ensure calm, positive beach experiences for everyone.</p>
           </div>
         </a>
@@ -123,8 +146,8 @@
     <div class="container small">© 2025 Florida Dog Beaches Guide — <a href="privacy.html" style="color:#fff;text-decoration:underline">Privacy</a> • <a href="about.html" style="color:#fff;text-decoration:underline">About</a></div>
   </footer>
 
-  <script src="/assets/js/randomize.min.js"></script>
   <script>
+    // Randomize hero image
     const heroPool = [
       "images/pexels-valeriiamiller-2702405.jpg",
       "images/pexels-dario-fernandez-ruz-6827317.jpg",
@@ -132,14 +155,18 @@
       "footprint-946189_1280.jpg",
       "images/pexels-miami302-16982801.jpg"
     ];
-
     document.addEventListener('DOMContentLoaded', () => {
       const hero = document.getElementById('hero');
       const img = heroPool[Math.floor(Math.random() * heroPool.length)];
       hero.style.backgroundImage = `url(${img})`;
+
+      // Randomize guides display
+      const allGuides = document.querySelectorAll('#all-guides .card');
+      const randomGuides = document.getElementById('random-guides');
+      const shuffled = Array.from(allGuides).sort(() => 0.5 - Math.random());
+      const selected = shuffled.slice(0, 3);
+      selected.forEach(card => randomGuides.appendChild(card.cloneNode(true)));
     });
   </script>
 </body>
 </html>
-
-
