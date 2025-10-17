@@ -106,126 +106,87 @@
 
     <p class="note">A well-packed beach bag makes your trip stress-free and safe. Follow this checklist to keep your pup happy, healthy, and coming back for more beach adventures.</p>
 
-  <section class="related-guides">
-  <hr>
-  <h2>More Dog Beach Guides</h2>
-  <hr>
+    <section class="related-guides">
+      <hr>
+      <h2>More Dog Beach Guides</h2>
+      <hr>
 
-  <!-- keep this as the hidden source of guide cards -->
-  <div id="all-guides" style="display:none;">
-    <a class="card" href="unfriendly-dogs.html">
-      <img class="card-img" src="pexels-valeriiamiller-2702405.jpg" alt="How to Handle Unfriendly Dogs">
-      <div class="card-body">
-        <h2>How to Handle Unfriendly Dogs or Crowded Beaches</h2>
-        <p>Learn how to safely handle unfriendly dogs and crowded beaches in Florida. Tips for dog owners to ensure calm, positive beach experiences for everyone.</p>
+      <!-- Hidden source of guide cards -->
+      <div id="all-guides" style="display:none;">
+        <a class="card" href="unfriendly-dogs.html">
+          <img class="card-img" src="pexels-valeriiamiller-2702405.jpg" alt="How to Handle Unfriendly Dogs">
+          <div class="card-body">
+            <h2>How to Handle Unfriendly Dogs or Crowded Beaches</h2>
+            <p>Learn how to safely handle unfriendly dogs and crowded beaches in Florida. Tips for dog owners to ensure calm, positive beach experiences for everyone.</p>
+          </div>
+        </a>
+
+        <a class="card" href="quick-tips.html">
+          <img class="card-img" src="pexels-kampus-8734431.jpg" alt="Dog Beach Quick Tips">
+          <div class="card-body">
+            <h2>Dog Beach Quick Tips</h2>
+            <p>Smart advice and etiquette for a perfect day on Florida’s best dog beaches.</p>
+          </div>
+        </a>
+
+        <a class="card" href="Top-10-Dog-Beach-Toys-&-Games.html">
+          <img class="card-img" src="pexels-rachel-claire-5865334.jpg" alt="Top 10 Dog Beach Toys">
+          <div class="card-body">
+            <h2>Top 10 Dog Beach Toys & Games</h2>
+            <p>Top 10 dog beach toys and games — floating fetch toys, water-safe frisbees, durable balls, cooling mats, and more for safe play at Florida beaches.</p>
+          </div>
+        </a>
       </div>
-    </a>
 
-    <a class="card" href="quick-tips.html">
-      <img class="card-img" src="pexels-kampus-8734431.jpg" alt="Dog Beach Quick Tips">
-      <div class="card-body">
-        <h2>Dog Beach Quick Tips</h2>
-        <p>Smart advice and etiquette for a perfect day on Florida’s best dog beaches.</p>
-      </div>
-    </a>
+      <!-- Visible grid for random guides -->
+      <div id="random-guides" class="card-grid" aria-live="polite"></div>
+    </section>
 
-    <a class="card" href="Top-10-Dog-Beach-Toys-&-Games.html">
-      <img class="card-img" src="pexels-rachel-claire-5865334.jpg" alt="Top 10 Dog Beach Toys">
-      <div class="card-body">
-        <h2>Top 10 Dog Beach Toys & Games</h2>
-        <p>Top 10 dog beach toys and games — floating fetch toys, water-safe frisbees, durable balls, cooling mats, and more for safe play at Florida beaches.</p>
-      </div>
-    </a>
-  </div>
-
-  <!-- visible grid where random cards will be shown -->
-  <div id="random-guides" class="card-grid" aria-live="polite"></div>
-</section>
-
-<!-- Put this script AFTER the above HTML and after any other scripts that might
-     manage guides. It includes guards so it doesn't duplicate content. -->
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    try {
-      const randomGuides = document.getElementById('random-guides');
-      const allGuidesContainer = document.getElementById('all-guides');
-
-      // If randomGuides already has children, do nothing (prevents double-run)
-      if (!randomGuides || randomGuides.children.length > 0) return;
-
-      // Hide the source container (in case CSS changed elsewhere)
-      if (allGuidesContainer) allGuidesContainer.style.display = 'none';
-
-      // Grab the cards from the hidden source
-      const cards = allGuidesContainer ? Array.from(allGuidesContainer.querySelectorAll('.card')) : [];
-      if (cards.length === 0) return;
-
-      // Shuffle function (Fisher-Yates)
-      function shuffle(array) {
-        for (let i = array.length - 1; i > 0; i--) {
-          const j = Math.floor(Math.random() * (i + 1));
-          [array[i], array[j]] = [array[j], array[i]];
-        }
-        return array;
-      }
-
-      const numToShow = 3; // change this number to show more/less
-      const shuffled = shuffle(cards.slice()); // operate on a copy
-      const selected = shuffled.slice(0, Math.min(numToShow, shuffled.length));
-
-      // Append clones so the source stays intact
-      selected.forEach(card => {
-        const clone = card.cloneNode(true);
-        randomGuides.appendChild(clone);
-      });
-
-      // If you want the visible cards to have a slight fade-in:
-      requestAnimationFrame(() => {
-        randomGuides.querySelectorAll('.card').forEach((c, i) => {
-          c.style.opacity = '0';
-          c.style.transition = 'opacity 220ms ease ' + (i * 80) + 'ms';
-          requestAnimationFrame(() => c.style.opacity = '1');
-        });
-      });
-    } catch (err) {
-      // fail silently (don't break the rest of the page)
-      console.error('Guide randomizer error:', err);
-    }
-  });
-</script>
-
-    
   </main>
 
   <footer class="site-footer">
     <nav class="site-nav"><a href="index.html">Home</a></nav>
-    <div class="container small">© 2025 Florida Dog Beaches Guide — <a href="privacy.html" style="color:#fff;text-decoration:underline">Privacy</a> • <a href="about.html" style="color:#fff;text-decoration:underline">About</a></div>
+    <div class="container small">© 2025 Florida Dog Beaches Guide — 
+      <a href="privacy.html" style="color:#fff;text-decoration:underline">Privacy</a> • 
+      <a href="about.html" style="color:#fff;text-decoration:underline">About</a>
+    </div>
   </footer>
 
+  <!-- Hero + Randomizer Script -->
   <script>
-    // Randomize hero image
-    const heroPool = [
-      "images/pexels-valeriiamiller-2702405.jpg",
-      "images/pexels-dario-fernandez-ruz-6827317.jpg",
-      "images/pexels-barczakshoots-7947539.jpg",
-      "footprint-946189_1280.jpg",
-      "images/pexels-miami302-16982801.jpg"
-    ];
     document.addEventListener('DOMContentLoaded', () => {
+      // 🎨 Randomize hero image
+      const heroPool = [
+        "images/pexels-valeriiamiller-2702405.jpg",
+        "images/pexels-dario-fernandez-ruz-6827317.jpg",
+        "images/pexels-barczakshoots-7947539.jpg",
+        "footprint-946189_1280.jpg",
+        "images/pexels-miami302-16982801.jpg"
+      ];
       const hero = document.getElementById('hero');
-      const img = heroPool[Math.floor(Math.random() * heroPool.length)];
-      hero.style.backgroundImage = `url(${img})`;
+      if (hero) {
+        const img = heroPool[Math.floor(Math.random() * heroPool.length)];
+        hero.style.backgroundImage = `url(${img})`;
+      }
 
-      // Randomize guides display
-      const allGuides = document.querySelectorAll('#all-guides .card');
+      // 🐾 Randomize guide cards
+      const allGuidesContainer = document.getElementById('all-guides');
       const randomGuides = document.getElementById('random-guides');
-      const shuffled = Array.from(allGuides).sort(() => 0.5 - Math.random());
+      if (!allGuidesContainer || !randomGuides) return;
+
+      const cards = Array.from(allGuidesContainer.querySelectorAll('.card'));
+      if (cards.length === 0) return;
+
+      // Shuffle cards
+      const shuffled = cards.sort(() => Math.random() - 0.5);
       const selected = shuffled.slice(0, 3);
-      selected.forEach(card => randomGuides.appendChild(card.cloneNode(true)));
+
+      // Append clones of selected cards
+      selected.forEach(card => {
+        const clone = card.cloneNode(true);
+        randomGuides.appendChild(clone);
+      });
     });
   </script>
 </body>
 </html>
-
-
-
