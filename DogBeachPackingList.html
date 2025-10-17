@@ -21,6 +21,7 @@
       transition: background 0.2s ease;
     }
     .directions-btn:hover { background: #005fa3; }
+
     .card-grid {
       display: grid;
       gap: 1.5rem;
@@ -138,7 +139,7 @@
         </a>
       </div>
 
-      <!-- Visible grid for random guides -->
+      <!-- Visible grid for random guide -->
       <div id="random-guides" class="card-grid" aria-live="polite"></div>
     </section>
 
@@ -169,7 +170,7 @@
         hero.style.backgroundImage = `url(${img})`;
       }
 
-      // 🐾 Randomize guide cards
+      // 🐾 Randomize one guide card
       const allGuidesContainer = document.getElementById('all-guides');
       const randomGuides = document.getElementById('random-guides');
       if (!allGuidesContainer || !randomGuides) return;
@@ -177,15 +178,9 @@
       const cards = Array.from(allGuidesContainer.querySelectorAll('.card'));
       if (cards.length === 0) return;
 
-      // Shuffle cards
-      const shuffled = cards.sort(() => Math.random() - 0.5);
-      const selected = shuffled.slice(0, 3);
-
-      // Append clones of selected cards
-      selected.forEach(card => {
-        const clone = card.cloneNode(true);
-        randomGuides.appendChild(clone);
-      });
+      const randomCard = cards[Math.floor(Math.random() * cards.length)];
+      const clone = randomCard.cloneNode(true);
+      randomGuides.appendChild(clone);
     });
   </script>
 </body>
