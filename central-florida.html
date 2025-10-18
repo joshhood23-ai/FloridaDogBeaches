@@ -191,7 +191,38 @@
     <nav class="site-nav"><a href="index.html">Home</a></nav>
     <div class="container small">© 2025 Florida Dog Beaches Guide — <a href="privacy.html" style="color:#fff;text-decoration:underline">Privacy</a> • <a href="about.html" style="color:#fff;text-decoration:underline">About</a></div>
   </footer>
+<!-- Hero + Randomizer Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // 🎨 Randomize hero image
+      const heroPool = [
+        "images/pexels-valeriiamiller-2702405.jpg",
+        "images/pexels-dario-fernandez-ruz-6827317.jpg",
+        "images/pexels-barczakshoots-7947539.jpg",
+        "footprint-946189_1280.jpg",
+        "images/pexels-miami302-16982801.jpg"
+      ];
+      const hero = document.getElementById('hero');
+      if (hero) {
+        const img = heroPool[Math.floor(Math.random() * heroPool.length)];
+        hero.style.backgroundImage = `url(${img})`;
+      }
 
+      // 🐾 Randomize one guide card
+      const allGuidesContainer = document.getElementById('all-guides');
+      const randomGuides = document.getElementById('random-guides');
+      if (!allGuidesContainer || !randomGuides) return;
+
+      const cards = Array.from(allGuidesContainer.querySelectorAll('.card'));
+      if (cards.length === 0) return;
+
+      const randomCard = cards[Math.floor(Math.random() * cards.length)];
+      const clone = randomCard.cloneNode(true);
+      randomGuides.appendChild(clone);
+    });
+  </script>
+
+</body>
   <script src="/assets/js/randomize.min.js"></script>
   <script>
     const heroPool = [
@@ -225,5 +256,6 @@
       });
     });
   </script>
+
 
 
