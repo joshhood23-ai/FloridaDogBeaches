@@ -36,7 +36,7 @@
       .site-nav{display:flex;flex-wrap:wrap}
     }
 
-/* ---------- ✅ Evenly balanced grid ---------- */
+   /* ---------- GRID & CARD LAYOUT ---------- */
     .grid, .toy-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -53,7 +53,7 @@
       box-shadow:0 8px 24px rgba(16,24,40,.06);
       transition:transform .18s ease;
       width:100%;
-      max-width:320px; /* keeps them balanced visually */
+      max-width:320px;
     }
 
     .card:hover, .toy-card:hover {
@@ -65,16 +65,116 @@
     .card h3, .toy-card h3{margin:0 0 .4rem;color:#0077b6;font-size:1.05rem}
     .card p, .toy-card p{margin:0;color:#374151;font-size:.96rem}
 
+    /* ---------- IMAGE FIX: UNIFORM & CONTAINED ---------- */
+    .toy-card img,
+    .related-guides .card-img,
+    .related-guides .card img,
+    .card img {
+      display: block !important;
+      width: 100% !important;
+      height: 220px !important;
+      object-fit: contain !important;
+      object-position: center center !important;
+      background-color: #f0f0f0 !important;
+    }
+
+    .toy-card, .related-guides .card {
+      display: flex !important;
+      flex-direction: column !important;
+      justify-content: space-between !important;
+      align-items: stretch !important;
+      height: 100% !important;
+      box-sizing: border-box !important;
+      overflow: hidden !important;
+    }
+
+    .toy-card-content, .card-body {
+      flex-grow: 1 !important;
+      display: flex !important;
+      flex-direction: column !important;
+      justify-content: space-between !important;
+    }
+
+    /* ---------- ADS / FOOTER ---------- */
     .ads-block{background:#eef2f7;padding:1rem;border-radius:10px;text-align:center;margin:1.25rem 0;color:#374151}
     .site-footer{background:#0f1724;color:#fff;padding:1rem;text-align:center;margin-top:2rem}
     .small{font-size:.9rem;color:#9ca3af}
     .note{font-size:.88rem;color:#6b7280;margin-top:1rem}
+
+    /* ---------- HORIZONTAL "MORE GUIDES" SECTION ---------- */
+    .related-guides .card-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      justify-content: center;
+      align-items: stretch;
+      margin-top: 1.5rem;
+    }
+
+    .related-guides .card {
+      display: flex;
+      flex-direction: row;
+      align-items: stretch;
+      background: #fff;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 8px 24px rgba(16, 24, 40, 0.06);
+      transition: transform 0.18s ease;
+      width: 100%;
+      max-width: 800px;
+      min-height: 200px;
+    }
+
+    .related-guides .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 30px rgba(16, 24, 40, 0.09);
+    }
+
+    .related-guides .card img {
+      width: 40%;
+      height: auto;
+      object-fit: cover;
+      display: block;
+    }
+
+    .related-guides .card-body {
+      flex: 1;
+      padding: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .related-guides .card-body h2 {
+      margin: 0 0 0.5rem;
+      color: #0077b6;
+      font-size: 1.25rem;
+    }
+
+    .related-guides .card-body p {
+      margin: 0;
+      color: #374151;
+      font-size: 1rem;
+    }
+
+    /* ---------- RESPONSIVE ---------- */
+    @media (max-width:768px) {
+      .related-guides .card {
+        flex-direction: column;
+        max-width: 100%;
+      }
+      .related-guides .card img {
+        width: 100%;
+        height: 220px;
+      }
+    }
 
     @media(max-width:640px){
       .hero{height:220px;font-size:1.2rem}
       .site-header{flex-direction:column;align-items:flex-start}
       .site-nav{display:flex;flex-wrap:wrap}
     }
+  </style>
 
     /* ---------- ✅ Final Image Fix ---------- */
     .toy-card img,
@@ -442,5 +542,6 @@
   </script>
 </body>
 </html>
+
 
 
