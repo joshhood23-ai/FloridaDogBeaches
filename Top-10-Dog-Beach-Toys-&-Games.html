@@ -8,8 +8,9 @@
   <meta name="keywords" content="dog beach toys, floating dog toys, Chuckit, KONG Aqua, water frisbee, dog cooling mat, dog beach games" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/assets/css/styles.min.css">
+
   <style>
-    /* user-provided base CSS (kept intact) */
+    /* ---------- Base Styles (unchanged) ---------- */
     body{margin:0;font-family:Inter,Arial,Helvetica,sans-serif;background:#f8fafc;color:#111;line-height:1.6}
     a{color:inherit}
     .container{max-width:1200px;margin:0 auto;padding:1.25rem}
@@ -21,7 +22,7 @@
     .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem;margin-top:1rem}
     .card{background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 8px 24px rgba(16,24,40,.06);transition:transform .18s ease}
     .card:hover{transform:translateY(-6px);box-shadow:0 12px 30px rgba(16,24,40,.09)}
-    .card img{width:100%;height:160px;object-fit:cover;display:block}
+    .card img{width:100%;height:160px;display:block}
     .card-body{padding:.9rem 1rem}
     .card h3{margin:0 0 .4rem;color:#0077b6;font-size:1.05rem}
     .card p{margin:0;color:#374151;font-size:.96rem}
@@ -29,117 +30,68 @@
     .site-footer{background:#0f1724;color:#fff;padding:1rem;text-align:center;margin-top:2rem}
     .small{font-size:.9rem;color:#9ca3af}
     .note{font-size:.88rem;color:#6b7280;margin-top:1rem}
-    @media(max-width:640px){.hero{height:220px;font-size:1.2rem}.site-header{flex-direction:column;align-items:flex-start}.site-nav{display:flex;flex-wrap:wrap}}
-
-    /* ---------- IMAGE FIXES (only changes) ---------- */
-    /* Force consistent card image sizing and override conflicting rules */
-    .toy-grid, .grid { box-sizing: border-box; }
-
-    /* Target the toy cards specifically and related guides */
-    .toy-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; margin-top: 1rem; align-items: stretch; }
-
-    .toy-card,
-    .related-guides .card {
-      background: #fff;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-      transition: transform 0.2s ease;
-      display: flex;
-      flex-direction: column;
-      box-sizing: border-box;
+    @media(max-width:640px){
+      .hero{height:220px;font-size:1.2rem}
+      .site-header{flex-direction:column;align-items:flex-start}
+      .site-nav{display:flex;flex-wrap:wrap}
     }
-    .toy-card:hover { transform: translateY(-4px); }
 
-    /* Highly-specific image rules to override other stylesheet rules */
-    .toy-card > img,
+    /* ---------- ✅ FINAL IMAGE FIX ---------- */
     .toy-card img,
     .related-guides .card-img,
-    .related-guides .card img {
+    .related-guides .card img,
+    .card img {
       display: block !important;
       width: 100% !important;
       height: 220px !important;
-      max-height: 220px !important;
-      object-fit: cover !important;
+      object-fit: contain !important; /* fit image fully inside */
       object-position: center center !important;
-      background: #f8f8f8;
+      background-color: #f0f0f0 !important; /* letterbox background */
+      border: none !important;
+      padding: 0 !important;
+      margin: 0 !important;
     }
 
-    /* Keep card content flexible so cards align even with varying text lengths */
+    .toy-card,
+    .related-guides .card {
+      display: flex !important;
+      flex-direction: column !important;
+      justify-content: space-between !important;
+      align-items: stretch !important;
+      height: 100% !important;
+      box-sizing: border-box !important;
+      overflow: hidden !important;
+    }
+
     .toy-card-content,
     .card-body {
-      padding: 1rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      box-sizing: border-box;
-      flex: 1 1 auto;
+      flex-grow: 1 !important;
+      display: flex !important;
+      flex-direction: column !important;
+      justify-content: space-between !important;
+      padding: 1rem !important;
+      box-sizing: border-box !important;
     }
 
-    /* smaller screens: slightly smaller images */
-    @media (max-width:420px){
-      .toy-card > img,
+    @media (max-width: 600px) {
+      .toy-card img,
       .related-guides .card-img,
-      .card img { height: 180px !important; max-height:180px !important; }
+      .card img {
+        height: 180px !important;
+      }
     }
-</style>  
-
-<style id="image-fix-final">
-/* ✅ FINAL IMAGE FIX — stronger and guaranteed to override styles.min.css */
-
-.toy-card img,
-.related-guides .card-img,
-.related-guides .card img,
-.card img {
-  display: block !important;
-  width: 100% !important;
-  height: 220px !important;
-  object-fit: cover !important;
-  object-position: center center !important;
-  background-color: #f8f8f8 !important;
-  border: none !important;
-  padding: 0 !important;
-  margin: 0 !important;
-}
-
-/* Make all toy and guide cards flex evenly */
-.toy-card,
-.related-guides .card {
-  display: flex !important;
-  flex-direction: column !important;
-  justify-content: space-between !important;
-  height: 100% !important;
-}
-
-/* Ensure content aligns properly */
-.toy-card-content,
-.card-body {
-  flex-grow: 1 !important;
-  display: flex !important;
-  flex-direction: column !important;
-  justify-content: space-between !important;
-  padding: 1rem !important;
-}
-
-/* Mobile adjustments */
-@media (max-width: 600px) {
-  .toy-card img,
-  .related-guides .card-img,
-  .card img {
-    height: 180px !important;
-  }
-}
-</style>
-
-  
+  </style>
 </head>
+
 <body>
   <header class="site-header container">
     <div class="site-brand">🐾 Florida Dog Beaches</div>
     <nav class="site-nav"><a href="index.html">Home</a></nav>
   </header>
 
-  <div id="hero" class="hero" role="img" aria-label="Dogs playing at the beach">Top 10 Dog Beach Toys & Games</div>
+  <div id="hero" class="hero" role="img" aria-label="Dogs playing at the beach">
+    Top 10 Dog Beach Toys & Games
+  </div>
 
   <main class="container">
     <h1>Top 10 Dog Beach Toys & Games</h1>
@@ -241,7 +193,6 @@
 
     <p class="note">Always supervise playtime and rinse toys with fresh water after each beach visit to extend their life and keep your dog safe.</p>
 
-    <!-- Related Guides -->
     <section class="related-guides">
       <hr>
       <h2>More Dog Beach Guides</h2>
@@ -250,7 +201,7 @@
         <a class="card" href="unfriendly-dogs.html">
           <img class="card-img" src="pexels-valeriiamiller-2702405.jpg" alt="Dog Beach Packing List">
           <div class="card-body">
-            <h2>How to Handle Unfriendly Dogs or Crowded Beaches </h2>
+            <h2>How to Handle Unfriendly Dogs or Crowded Beaches</h2>
             <p>Learn how to safely handle unfriendly dogs and crowded beaches in Florida. Tips for dog owners to ensure calm, positive beach experiences for everyone.</p>
           </div>
         </a>
@@ -279,7 +230,7 @@
   <footer class="site-footer">
     <nav class="site-nav"><a href="index.html">Home</a></nav>
     <div class="container small">
-      © 2025 Florida Dog Beaches Guide — 
+      © 2025 Florida Dog Beaches Guide —
       <a href="privacy.html" style="color:#fff;text-decoration:underline">Privacy</a> • 
       <a href="about.html" style="color:#fff;text-decoration:underline">About</a>
     </div>
@@ -304,20 +255,5 @@
       randomContainer.appendChild(randomCard.cloneNode(true));
     });
   </script>
-
-  
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
