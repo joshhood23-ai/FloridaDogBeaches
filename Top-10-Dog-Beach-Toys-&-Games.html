@@ -36,6 +36,93 @@
       .site-nav{display:flex;flex-wrap:wrap}
     }
 
+/* ---------- ✅ Evenly balanced grid ---------- */
+    .grid, .toy-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      justify-items: center;
+      align-items: start;
+      margin-top: 1rem;
+    }
+
+    .card, .toy-card {
+      background:#fff;
+      border-radius:12px;
+      overflow:hidden;
+      box-shadow:0 8px 24px rgba(16,24,40,.06);
+      transition:transform .18s ease;
+      width:100%;
+      max-width:320px; /* keeps them balanced visually */
+    }
+
+    .card:hover, .toy-card:hover {
+      transform:translateY(-6px);
+      box-shadow:0 12px 30px rgba(16,24,40,.09);
+    }
+
+    .card-body, .toy-card-content{padding:.9rem 1rem}
+    .card h3, .toy-card h3{margin:0 0 .4rem;color:#0077b6;font-size:1.05rem}
+    .card p, .toy-card p{margin:0;color:#374151;font-size:.96rem}
+
+    .ads-block{background:#eef2f7;padding:1rem;border-radius:10px;text-align:center;margin:1.25rem 0;color:#374151}
+    .site-footer{background:#0f1724;color:#fff;padding:1rem;text-align:center;margin-top:2rem}
+    .small{font-size:.9rem;color:#9ca3af}
+    .note{font-size:.88rem;color:#6b7280;margin-top:1rem}
+
+    @media(max-width:640px){
+      .hero{height:220px;font-size:1.2rem}
+      .site-header{flex-direction:column;align-items:flex-start}
+      .site-nav{display:flex;flex-wrap:wrap}
+    }
+
+    /* ---------- ✅ Final Image Fix ---------- */
+    .toy-card img,
+    .related-guides .card-img,
+    .related-guides .card img,
+    .card img {
+      display: block !important;
+      width: 100% !important;
+      height: 220px !important;
+      object-fit: contain !important;
+      object-position: center center !important;
+      background-color: #f0f0f0 !important;
+      border: none !important;
+      padding: 0 !important;
+      margin: 0 !important;
+    }
+
+    .toy-card,
+    .related-guides .card {
+      display: flex !important;
+      flex-direction: column !important;
+      justify-content: space-between !important;
+      align-items: stretch !important;
+      height: 100% !important;
+      box-sizing: border-box !important;
+      overflow: hidden !important;
+    }
+
+    .toy-card-content,
+    .card-body {
+      flex-grow: 1 !important;
+      display: flex !important;
+      flex-direction: column !important;
+      justify-content: space-between !important;
+      padding: 1rem !important;
+      box-sizing: border-box !important;
+    }
+
+    @media (max-width: 600px) {
+      .toy-card img,
+      .related-guides .card-img,
+      .card img {
+        height: 180px !important;
+      }
+    }
+  </style>
+
+    
     /* ---------- ✅ FINAL IMAGE FIX ---------- */
     .toy-card img,
     .related-guides .card-img,
@@ -257,3 +344,4 @@
   </script>
 </body>
 </html>
+
