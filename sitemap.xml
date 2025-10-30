@@ -1,17 +1,108 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://florida-dog-beaches.vercel.app/</loc></url>
-  <url><loc>https://florida-dog-beaches.vercel.app/north-florida.html</loc></url>
-  <url><loc>https://florida-dog-beaches.vercel.app/central-florida.html</loc></url>
-  <url><loc>https://florida-dog-beaches.vercel.app/south-florida.html</loc></url>
-  <url><loc>https://florida-dog-beaches.vercel.app/keys.html</loc></url>
-  <url><loc>https://florida-dog-beaches.vercel.app/panhandle.html</loc></url>
-  <url><loc>https://florida-dog-beaches.vercel.app/about.html</loc></url>
-  <url><loc>https://florida-dog-beaches.vercel.app/privacy.html</loc></url>
-  <url><loc>https://florida-dog-beaches.vercel.app/DogBeachPackingList.html</loc></url>
-  <url><loc>https://florida-dog-beaches.vercel.app/unfriendly-dogs.html</loc></url>
-  <url><loc>https://florida-dog-beaches.vercel.app/quick-tips.html</loc></url>
-  <url><loc>https://florida-dog-beaches.vercel.app/red-tide.html</loc></url>
+  
+  <!-- Core Pages -->
+  <url>
+    <loc>https://florida-dog-beaches.vercel.app/</loc>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://florida-dog-beaches.vercel.app/about.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://florida-dog-beaches.vercel.app/contact.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://florida-dog-beaches.vercel.app/privacy.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://florida-dog-beaches.vercel.app/terms.html</loc>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Regional Guides -->
+  <url>
+    <loc>https://florida-dog-beaches.vercel.app/north-florida.html</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://florida-dog-beaches.vercel.app/central-florida.html</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://florida-dog-beaches.vercel.app/south-florida.html</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://florida-dog-beaches.vercel.app/keys.html</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://florida-dog-beaches.vercel.app/panhandle.html</loc>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Articles & Guides -->
+  <url>
+    <loc>https://florida-dog-beaches.vercel.app/DogBeachPackingList.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://florida-dog-beaches.vercel.app/Top-10-Dog-Beach-Toys-&-Games.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://florida-dog-beaches.vercel.app/BeachFirstAid.html</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://florida-dog-beaches.vercel.app/Best-Times-of-Year.html</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://florida-dog-beaches.vercel.app/Dog-Beach-Etiquette.html</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://florida-dog-beaches.vercel.app/Dog-Friendly-Hotels-and-Rentals.html</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://florida-dog-beaches.vercel.app/Dog-Sunscreen-and-Skin-Protection.html</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://florida-dog-beaches.vercel.app/Heatstroke-in-Dogs.html</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://florida-dog-beaches.vercel.app/Off-Leash-vs-On-Leash.html</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://florida-dog-beaches.vercel.app/ProtectingWildlife.html</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://florida-dog-beaches.vercel.app/red-tide.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://florida-dog-beaches.vercel.app/unfriendly-dogs.html</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://florida-dog-beaches.vercel.app/quick-tips.html</loc>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Extras -->
+  <url>
+    <loc>https://florida-dog-beaches.vercel.app/ads.txt</loc>
+    <priority>0.3</priority>
+  </url>
+
 </urlset>
-
-
