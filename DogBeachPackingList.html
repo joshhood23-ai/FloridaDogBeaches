@@ -9,6 +9,13 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/assets/css/styles.min.css">
   <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      color: #333;
+      background: #f9f9f9;
+    }
+
     .directions-btn {
       display: inline-block;
       margin-top: 0.5rem;
@@ -22,12 +29,35 @@
     }
     .directions-btn:hover { background: #005fa3; }
 
+    .hero {
+      background-size: cover;
+      background-position: center;
+      color: #fff;
+      padding: 4rem 1rem;
+      text-align: center;
+      font-size: 2rem;
+      font-weight: 700;
+      background-color: #000;
+    }
+
+    main.container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem 1rem;
+      background: #fff;
+    }
+
+    h1, h2, h3 {
+      color: #222;
+    }
+
     .card-grid {
       display: grid;
       gap: 1.5rem;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       margin-top: 1.5rem;
     }
+
     .card {
       display: block;
       border-radius: 10px;
@@ -39,12 +69,36 @@
       transition: transform 0.2s ease;
     }
     .card:hover { transform: translateY(-4px); }
+
     .card-img {
       width: 100%;
       height: 180px;
       object-fit: cover;
     }
     .card-body { padding: 1rem; }
+
+    footer.site-footer {
+      background: #0077cc;
+      color: #fff;
+      text-align: center;
+      padding: 1rem 0;
+      margin-top: 3rem;
+    }
+
+    footer.site-footer .site-nav a {
+      color: #fff;
+      margin: 0 0.5rem;
+      text-decoration: none;
+    }
+
+    footer.site-footer .site-nav a:hover {
+      text-decoration: underline;
+    }
+
+    .small {
+      font-size: 0.85rem;
+      margin-top: 0.5rem;
+    }
   </style>
 </head>
 <body>
@@ -59,13 +113,10 @@
     <h1>Dog Beach Packing List: What to Bring for a Safe and Fun Day</h1>
     <p class="lead">A day at the dog beach can be the highlight of the week for both you and your pup — but packing the wrong things can turn it into a stressful day. Here’s a complete packing list for a fun, safe, and stress-free trip to the dog beach.</p>
 
-    <!-- Google AdSense -->
-
     <section>
       <h2>Essential Items for the Dog Beach</h2>
 
       <h3>1. Fresh Water & Portable Bowl</h3>
-       <img src="1Collapsible Silicone Water Bowl.jpg" alt="Water Bowl" class="inline-img"/>
       <p>Hydration is key. Dogs should never drink saltwater, which can cause dehydration and stomach issues.</p>
       
       <h3>2. Leash & Harness</h3>
@@ -87,7 +138,6 @@
       <p>Some dogs burn easily, especially light-colored or short-haired breeds. Use pet-safe sunscreen for sensitive skin.</p>
 
       <h3>8. First Aid Kit</h3>
-       <img src="Firstaid.jpg" alt="First Aid Kit" class="inline-img"/>
       <p>A basic kit with antiseptic wipes, tweezers, and paw balm keeps you ready for scrapes or cuts.</p>
 
       <h3>9. Dog Life Jacket (Optional)</h3>
@@ -99,104 +149,65 @@
 
     <p class="note">A well-packed beach bag makes your trip stress-free and safe. Follow this checklist to keep your pup happy, healthy, and coming back for more beach adventures.</p>
 
-   <section class="related-guides">
-  <hr>
-  <center><h2>More Guides and Quick Tips</h2></center>
-  <hr>
+    <section class="related-guides">
+      <hr>
+      <center><h2>More Guides and Quick Tips</h2></center>
+      <hr>
 
-  <!-- All Guides (Hidden Master List) -->
-  <div id="all-guides" style="display:none;">
+      <div id="all-guides" style="display:none;">
 
-    <a class="card" href="DogBeachPackingList.html">
-      <img class="card-img" src="pexels-lenin-estrada-117221-2896297.jpg" alt="Dog Beach Packing List">
-      <div class="card-body">
-        <h2>Dog Beach Packing List: What to Bring for a Safe and Fun Day</h2>
-        <p>Heading to the dog beach? Check out this essential packing list to make sure your pup has everything for a perfect day in the sun.</p>
+        <a class="card" href="ProtectingWildlife.html">
+          <img class="card-img" src="chasing.jpg" alt="Protecting Wildlife While Visiting Dog Beaches">
+          <div class="card-body">
+            <h2>Protecting Wildlife While Visiting Dog Beaches</h2>
+            <p>Learn how to enjoy Florida’s dog beaches responsibly while protecting coastal wildlife and habitats.</p>
+          </div>
+        </a>
+
+        <a class="card" href="quick-tips.html">
+          <img class="card-img" src="pexels-kampus-8734431.jpg" alt="Dog Beach Quick Tips">
+          <div class="card-body">
+            <h2>Dog Beach Quick Tips</h2>
+            <p>Smart advice and etiquette for a perfect day on Florida’s best dog beaches.</p>
+          </div>
+        </a>
+
+        <a class="card" href="DogBeachToys.html">
+          <img class="card-img" src="pexels-pnw-prod-9354540.jpg" alt="Top 10 Dog Beach Toys & Games">
+          <div class="card-body">
+            <h2>Top 10 Dog Beach Toys & Games</h2>
+            <p>Floating fetch toys, water-safe frisbees, and more fun beach games for your four-legged friend.</p>
+          </div>
+        </a>
+
+        <a class="card" href="DogSwimmingSafety.html">
+          <img class="card-img" src="footprint-946189_1280.jpg" alt="Safe Swimming Tips for Dogs">
+          <div class="card-body">
+            <h2>Safe Swimming Tips for Dogs</h2>
+            <p>Keep your dog safe in the surf with expert swimming safety advice for Florida’s coastal waters.</p>
+          </div>
+        </a>
       </div>
-    </a>
 
-    <a class="card" href="ProtectingWildlife.html">
-      <img class="card-img" src="chasing.jpg" alt="Protecting Wildlife While Visiting Dog Beaches">
-      <div class="card-body">
-        <h2>Protecting Wildlife While Visiting Dog Beaches</h2>
-        <p>Learn how to enjoy Florida’s dog beaches responsibly while protecting coastal wildlife and habitats.</p>
-      </div>
-    </a>
-
-    <a class="card" href="quick-tips.html">
-      <img class="card-img" src="pexels-kampus-8734431.jpg" alt="Dog Beach Quick Tips">
-      <div class="card-body">
-        <h2>Dog Beach Quick Tips</h2>
-        <p>Smart advice and etiquette for a perfect day on Florida’s best dog beaches.</p>
-      </div>
-    </a>
-
-    <a class="card" href="Dog-Sunscreen-and-Skin-Protection.html">
-      <img class="card-img" src="pexels-ayyeee-ayyeee-434363205-18962450.jpg" alt="Dog Sunscreen and Skin Protection">
-      <div class="card-body">
-        <h2>Dog Sunscreen and Skin Protection</h2>
-        <p>Learn how to protect your dog from Florida’s harsh sun. Discover safe sunscreens, skin protection tips, and signs of sunburn every dog owner should know.</p>
-      </div>
-    </a>
-
-    <a class="card" href="DogBeachToys.html">
-      <img class="card-img" src="pexels-pnw-prod-9354540.jpg" alt="Top 10 Dog Beach Toys & Games">
-      <div class="card-body">
-        <h2>Top 10 Dog Beach Toys & Games</h2>
-        <p>Floating fetch toys, water-safe frisbees, and more fun beach games for your four-legged friend.</p>
-      </div>
-    </a>
-
-    <a class="card" href="DogSwimmingSafety.html">
-      <img class="card-img" src="footprint-946189_1280.jpg" alt="Safe Swimming Tips for Dogs">
-      <div class="card-body">
-        <h2>Safe Swimming Tips for Dogs</h2>
-        <p>Keep your dog safe in the surf with expert swimming safety advice for Florida’s coastal waters.</p>
-      </div>
-    </a>
-
-    <a class="card" href="DogBeachEyesAndEars.html">
-      <img class="card-img" src="dog-5488413_1280.jpg" alt="Keeping Sand Out of Your Dog’s Eyes & Ears">
-      <div class="card-body">
-        <h2>Keeping Sand Out of Your Dog’s Eyes & Ears</h2>
-        <p>Prevent irritation and infections from sand exposure. Simple tips to protect your dog’s eyes and ears during a beach day.</p>
-      </div>
-    </a>
-
-  </div>
-
-  <!-- Randomized Visible Section -->
-  <div id="random-guides" class="card-grid" aria-live="polite"></div>
-</section>
-
-<script>
-// Randomly show 3–4 guides
-document.addEventListener("DOMContentLoaded", () => {
-  const allGuides = Array.from(document.querySelectorAll("#all-guides .card"));
-  const randomCount = Math.floor(Math.random() * 2) + 3; // 3–4 random cards
-  const shuffled = allGuides.sort(() => 0.5 - Math.random()).slice(0, randomCount);
-  const container = document.getElementById("random-guides");
-  shuffled.forEach(card => container.appendChild(card.cloneNode(true)));
-});
-</script>
-
+      <!-- Randomized Visible Section -->
+      <div id="random-guides" class="card-grid" aria-live="polite"></div>
+    </section>
   </main>
 
-
-  
   <footer class="site-footer">
     <nav class="site-nav"><a href="index.html">Home</a></nav>
-    <div class="container small">© 2025 Florida Dog Beaches Guide — This site uses Google AdSense. 
-      <a href="privacy.html" style="color:#fff;text-decoration:underline">Privacy</a> • 
-      <a href="about.html" style="color:#fff;text-decoration:underline">About</a> • 
-      <a href="Terms.html" style="color:#fff;text-decoration:underline">Terms of Service</a> • 
-      <a href="Contact.html" style="color:#fff;text-decoration:underline">Contact</a>
-      
+    <div class="container small">
+      © 2025 Florida Dog Beaches Guide — This site uses Google AdSense. 
+      <a href="privacy.html">Privacy</a> • 
+      <a href="about.html">About</a> • 
+      <a href="Terms.html">Terms of Service</a> • 
+      <a href="Contact.html">Contact</a>
     </div>
   </footer>
 
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
+    document.addEventListener("DOMContentLoaded", () => {
+      // Random hero image
       const heroPool = [
         "pexels-trinitykubassek-313979.jpg",
         "images/pexels-dario-fernandez-ruz-6827317.jpg",
@@ -204,23 +215,16 @@ document.addEventListener("DOMContentLoaded", () => {
         "pexels-muffin-2468773.jpg",
         "pexels-freestockpro-319899.jpg"
       ];
-      const hero = document.getElementById('hero');
+      const hero = document.getElementById("hero");
       const img = heroPool[Math.floor(Math.random() * heroPool.length)];
       hero.style.backgroundImage = `url(${img})`;
 
-      const allGuides = Array.from(document.querySelectorAll('#all-guides .card'));
-      const randomContainer = document.getElementById('random-guides');
+      // Show one random related guide
+      const allGuides = Array.from(document.querySelectorAll("#all-guides .card"));
+      const randomContainer = document.getElementById("random-guides");
       const randomCard = allGuides[Math.floor(Math.random() * allGuides.length)];
       randomContainer.appendChild(randomCard.cloneNode(true));
     });
   </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
