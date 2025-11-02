@@ -1,39 +1,71 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
   <title>Dog Sunscreen and Skin Protection | Florida Dog Beaches Guide</title>
   <meta name="description" content="Learn how to protect your dog from Florida’s harsh sun. Discover safe sunscreens, skin protection tips, and signs of sunburn every dog owner should know.">
   <meta name="keywords" content="dog sunscreen, sun protection for dogs, dog beach safety, Florida dog beaches, pet skincare">
-
+  
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/assets/css/styles.min.css">
-
+  
   <style>
+    .directions-btn {
+      display: inline-block;
+      margin-top: 0.5rem;
+      padding: 0.5rem 1rem;
+      background: #0077cc;
+      color: #fff;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 6px;
+      transition: background 0.2s ease;
+    }
+    .directions-btn:hover { background: #005fa3; }
+
+    .card-grid {
+      display: grid;
+      gap: 1.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      margin-top: 1.5rem;
+    }
+    .card {
+      display: block;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      text-decoration: none;
+      color: inherit;
+      background: #fff;
+      transition: transform 0.2s ease;
+    }
+    .card:hover { transform: translateY(-4px); }
+    .card-img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+    .card-body { padding: 1rem; }
+
     .inline-img {
       width: 100%;
       max-height: 400px;
       object-fit: cover;
-      border-radius: 12px;
-      margin: 1.5rem 0;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+      border-radius: 10px;
+      margin: 1rem 0;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     }
   </style>
 </head>
 <body>
-  <!-- HEADER -->
   <header class="site-header container">
     <div class="site-brand">🐾 Florida Dog Beaches</div>
     <nav class="site-nav"><a href="index.html">Home</a></nav>
   </header>
 
-  <!-- HERO -->
-  <div id="hero" class="hero" role="img" aria-label="Dog wearing a sun hat on the beach">
-    Dog Sunscreen and Skin Protection
-  </div>
+  <div id="hero" class="hero" role="img" aria-label="Dog wearing a sun hat on the beach">Dog Sunscreen and Skin Protection</div>
 
-  <!-- MAIN CONTENT -->
   <main class="container">
     <h1>Dog Sunscreen and Skin Protection</h1>
     <p class="lead">
@@ -129,7 +161,6 @@
       <hr>
 
       <div id="all-guides" style="display:none;">
-        <!-- Master List of All Guides (hidden for random selection) -->
         <a class="card" href="DogBeachPackingList.html">
           <img class="card-img" src="pexels-lenin-estrada-117221-2896297.jpg" alt="Dog Beach Packing List">
           <div class="card-body">
@@ -183,39 +214,34 @@
     </section>
   </main>
 
-  <!-- FOOTER -->
   <footer class="site-footer">
     <nav class="site-nav"><a href="index.html">Home</a></nav>
-    <div class="container small">
-      © 2025 Florida Dog Beaches Guide — This site uses Google AdSense. 
-      <a href="privacy.html">Privacy</a> • 
-      <a href="about.html">About</a> • 
-      <a href="Terms.html">Terms of Service</a> • 
-      <a href="Contact.html">Contact</a>
+    <div class="container small">© 2025 Florida Dog Beaches Guide — This site uses Google AdSense. 
+      <a href="privacy.html" style="color:#fff;text-decoration:underline">Privacy</a> • 
+      <a href="about.html" style="color:#fff;text-decoration:underline">About</a> • 
+      <a href="Terms.html" style="color:#fff;text-decoration:underline">Terms of Service</a> • 
+      <a href="Contact.html" style="color:#fff;text-decoration:underline">Contact</a>
     </div>
   </footer>
 
-  <!-- SCRIPTS -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      // Random Hero Image
       const heroPool = [
-        "images/pexels-trinitykubassek-313979.jpg",
+        "pexels-trinitykubassek-313979.jpg",
         "images/pexels-dario-fernandez-ruz-6827317.jpg",
         "images/pexels-barczakshoots-7947539.jpg",
-        "images/pexels-muffin-2468773.jpg",
-        "images/pexels-freestockpro-319899.jpg"
+        "pexels-muffin-2468773.jpg",
+        "pexels-freestockpro-319899.jpg"
       ];
       const hero = document.getElementById('hero');
       const img = heroPool[Math.floor(Math.random() * heroPool.length)];
       hero.style.backgroundImage = `url(${img})`;
 
-      // Random Related Guides
       const allGuides = Array.from(document.querySelectorAll('#all-guides .card'));
-      const randomContainer = document.getElementById('random-guides');
-      const randomCount = Math.floor(Math.random() * 2) + 3; // Show 3–4
+      const randomCount = Math.floor(Math.random() * 2) + 3; // show 3–4
       const shuffled = allGuides.sort(() => 0.5 - Math.random()).slice(0, randomCount);
-      shuffled.forEach(card => randomContainer.appendChild(card.cloneNode(true)));
+      const container = document.getElementById('random-guides');
+      shuffled.forEach(card => container.appendChild(card.cloneNode(true)));
     });
   </script>
 </body>
