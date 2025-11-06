@@ -30,13 +30,26 @@
       border-radius: 2px;
       margin: 1rem 0 1.5rem;
     }
-    .inline-img {
-      width: 100%;
-      max-height: 400px;
-      object-fit: cover;
-      border-radius: 10px;
-      margin: 1rem 0;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    .hero {
+      background-size: cover;
+      background-position: center;
+      color: #fff;
+      padding: 5rem 1rem;
+      text-align: center;
+      font-size: 2rem;
+      font-weight: 700;
+      position: relative;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.4);
+      z-index: 0;
+    }
+    .hero span {
+      position: relative;
+      z-index: 1;
     }
   </style>
 </head>
@@ -46,7 +59,9 @@
     <nav class="site-nav"><a href="index.html">Home</a></nav>
   </header>
 
-  <div id="hero" class="hero" role="img" aria-label="Dogs on a busy beach">How to Handle Unfriendly Dogs or Crowded Beaches</div>
+  <div id="hero" class="hero" role="img" aria-label="Dogs on a busy beach">
+    <span>How to Handle Unfriendly Dogs or Crowded Beaches</span>
+  </div>
 
   <main class="container">
     <h1>How to Handle Unfriendly Dogs or Crowded Beaches</h1>
@@ -59,7 +74,6 @@
     <section>
       <h2>🐕 Read Dog Body Language</h2>
       <hr>
-      <img src="dog-body-language-beach.jpg" alt="Dogs meeting on the beach showing calm body language" class="inline-img"/>
       <ul>
         <li><strong>Watch for warning signs:</strong> stiff posture, growling, raised hackles, or a fixed stare.</li>
         <li>If a dog looks tense, calmly walk the other way — avoid eye contact or sudden movement.</li>
@@ -71,7 +85,6 @@
     <section>
       <h2>🌊 Managing Crowded Beaches</h2>
       <hr>
-      <img src="crowded-dog-beach.jpg" alt="Crowded dog-friendly beach with people and dogs playing" class="inline-img"/>
       <ul>
         <li>Use a <strong>6-foot leash</strong> in crowded areas, even if off-leash play is allowed.</li>
         <li>Choose quieter sections of the beach or visit early morning/sunset hours.</li>
@@ -83,7 +96,6 @@
     <section>
       <h2>🐾 When an Unfriendly Dog Approaches</h2>
       <hr>
-      <img src="unfriendly-dog-approach.jpg" alt="Dog owner calmly handling approaching dog on the beach" class="inline-img"/>
       <ul>
         <li>Stay calm and avoid shouting — sudden loud noise can escalate things.</li>
         <li>Stand between the dogs and give a firm “No!” or “Stay!”</li>
@@ -95,7 +107,6 @@
     <section>
       <h2>🏖️ Know When to Leave</h2>
       <hr>
-      <img src="dog-resting-under-umbrella.jpg" alt="Dog resting under an umbrella at the beach" class="inline-img"/>
       <ul>
         <li>If your dog seems stressed, panting excessively, or refusing to play — it’s time for a break.</li>
         <li>Take a quiet walk or rest in a shaded area before returning.</li>
@@ -106,12 +117,12 @@
     <p class="note">Every dog deserves a fun, peaceful beach experience. By reading body language and giving space, you’ll keep both tails wagging — even on Florida’s busiest shores.</p>
   </main>
 
-  <section class="related-guides">
+  <section class="related-guides container">
     <hr>
-    <center><h2>More Guides and Quick Tips</h2></center>
+    <h2 class="section-title">More Guides and Quick Tips</h2>
     <hr>
 
-    <div id="all-guides" style="display:none;">
+    <div class="card-grid">
       <a class="card" href="DogBeachPackingList.html">
         <img class="card-img" src="pexels-lenin-estrada-117221-2896297.jpg" alt="Dog Beach Packing List">
         <div class="card-body">
@@ -128,11 +139,11 @@
         </div>
       </a>
 
-      <a class="card" href="quick-tips.html">
-        <img class="card-img" src="pexels-kampus-8734431.jpg" alt="Dog Beach Quick Tips">
+      <a class="card" href="DogBeachEyesAndEars.html">
+        <img class="card-img" src="dog-5488413_1280.jpg" alt="Keeping Sand Out of Your Dog’s Eyes & Ears">
         <div class="card-body">
-          <h2>Dog Beach Quick Tips</h2>
-          <p>Smart advice and etiquette for a perfect day on Florida’s best dog beaches.</p>
+          <h2>Keeping Sand Out of Your Dog’s Eyes & Ears</h2>
+          <p>Prevent irritation and infections from sand exposure. Simple tips to protect your dog’s eyes and ears during a beach day.</p>
         </div>
       </a>
 
@@ -143,48 +154,13 @@
           <p>Learn how to protect your dog from Florida’s harsh sun. Discover safe sunscreens, skin protection tips, and signs of sunburn every dog owner should know.</p>
         </div>
       </a>
-
-      <a class="card" href="DogBeachToys.html">
-        <img class="card-img" src="pexels-pnw-prod-9354540.jpg" alt="Top 10 Dog Beach Toys & Games">
-        <div class="card-body">
-          <h2>Top 10 Dog Beach Toys & Games</h2>
-          <p>Floating fetch toys, water-safe frisbees, and more fun beach games for your four-legged friend.</p>
-        </div>
-      </a>
-
-      <a class="card" href="DogSwimmingSafety.html">
-        <img class="card-img" src="footprint-946189_1280.jpg" alt="Safe Swimming Tips for Dogs">
-        <div class="card-body">
-          <h2>Safe Swimming Tips for Dogs</h2>
-          <p>Keep your dog safe in the surf with expert swimming safety advice for Florida’s coastal waters.</p>
-        </div>
-      </a>
-
-      <a class="card" href="DogBeachEyesAndEars.html">
-        <img class="card-img" src="dog-5488413_1280.jpg" alt="Keeping Sand Out of Your Dog’s Eyes & Ears">
-        <div class="card-body">
-          <h2>Keeping Sand Out of Your Dog’s Eyes & Ears</h2>
-          <p>Prevent irritation and infections from sand exposure. Simple tips to protect your dog’s eyes and ears during a beach day.</p>
-        </div>
-      </a>
     </div>
-
-    <div id="random-guides" class="card-grid" aria-live="polite"></div>
   </section>
-
-  <script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const allGuides = Array.from(document.querySelectorAll("#all-guides .card"));
-    const randomCount = Math.floor(Math.random() * 2) + 3;
-    const shuffled = allGuides.sort(() => 0.5 - Math.random()).slice(0, randomCount);
-    const container = document.getElementById("random-guides");
-    shuffled.forEach(card => container.appendChild(card.cloneNode(true)));
-  });
-  </script>
 
   <footer class="site-footer">
     <nav class="site-nav"><a href="index.html">Home</a></nav>
-    <div class="container small">© 2025 Florida Dog Beaches Guide — This site uses Google AdSense. 
+    <div class="container small">
+      © 2025 Florida Dog Beaches Guide — This site uses Google AdSense.
       <a href="privacy.html" style="color:#fff;text-decoration:underline">Privacy</a> • 
       <a href="about.html" style="color:#fff;text-decoration:underline">About</a> • 
       <a href="Terms.html" style="color:#fff;text-decoration:underline">Terms of Service</a> • 
@@ -193,18 +169,18 @@
   </footer>
 
   <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const heroPool = [
-      "pexels-trinitykubassek-313979.jpg",
-      "images/pexels-dario-fernandez-ruz-6827317.jpg",
-      "images/pexels-barczakshoots-7947539.jpg",
-      "pexels-muffin-2468773.jpg",
-      "pexels-freestockpro-319899.jpg"
-    ];
-    const hero = document.getElementById('hero');
-    const img = heroPool[Math.floor(Math.random() * heroPool.length)];
-    hero.style.backgroundImage = `url(${img})`;
-  });
+    document.addEventListener('DOMContentLoaded', () => {
+      const heroPool = [
+        "pexels-trinitykubassek-313979.jpg",
+        "images/pexels-dario-fernandez-ruz-6827317.jpg",
+        "images/pexels-barczakshoots-7947539.jpg",
+        "pexels-muffin-2468773.jpg",
+        "pexels-freestockpro-319899.jpg"
+      ];
+      const hero = document.getElementById('hero');
+      const img = heroPool[Math.floor(Math.random() * heroPool.length)];
+      hero.style.backgroundImage = `url(${img})`;
+    });
   </script>
 </body>
 </html>
