@@ -114,83 +114,121 @@
 
   </main>
 
-     <section class="related-guides">
-      <hr>
-      <h2>More Guides and Quick Tips</h2>
-      <hr>
+    <section class="related-guides">
+  <hr>
+  <center><h2>More Guides and Quick Tips</h2></center>
+  <hr>
 
-      <!-- Hidden source of guide cards -->
-      <div id="all-guides" style="display:none;">
-        <a class="card" href="unfriendly-dogs.html">
-          <img class="card-img" src="pexels-valeriiamiller-2702405.jpg" alt="How to Handle Unfriendly Dogs">
-          <div class="card-body">
-            <h2>How to Handle Unfriendly Dogs or Crowded Beaches</h2>
-            <p>Learn how to safely handle unfriendly dogs and crowded beaches in Florida. Tips for dog owners to ensure calm, positive beach experiences for everyone.</p>
-          </div>
-        </a>
+  <!-- All Guides (Hidden Master List) -->
+  <div id="all-guides" style="display:none;">
 
-        <a class="card" href="DogBeachPackingList.html">
-          <img class="card-img" src="pexels-kampus-8734431.jpg" alt="Dog Beach Quick Tips">
-          <div class="card-body">
-            <h2>Dog Beach Packing List: What to Bring for a Safe and Fun Day </h2>
-            <p>Heading to the dog beach? Check out this essential packing list to make sure your pup has everything for a perfect day in the sun.</p>
-          </div>
-        </a>
-
-        <a class="card" href="Top-10-Dog-Beach-Toys-&-Games.html">
-          <img class="card-img" src="pexels-rachel-claire-5865334.jpg" alt="Top 10 Dog Beach Toys">
-          <div class="card-body">
-            <h2>Top 10 Dog Beach Toys & Games</h2>
-            <p>Top 10 dog beach toys and games — floating fetch toys, water-safe frisbees, durable balls, cooling mats, and more for safe play at Florida beaches.</p>
-          </div>
-        </a>
+    <a class="card" href="DogBeachPackingList.html">
+      <img class="card-img" src="pexels-lenin-estrada-117221-2896297.jpg" alt="Dog Beach Packing List">
+      <div class="card-body">
+        <h2>Dog Beach Packing List: What to Bring for a Safe and Fun Day</h2>
+        <p>Heading to the dog beach? Check out this essential packing list to make sure your pup has everything for a perfect day in the sun.</p>
       </div>
+    </a>
 
-      <!-- Visible grid for random guide -->
-      <div id="random-guides" class="card-grid" aria-live="polite"></div>
-    </section>
+    <a class="card" href="ProtectingWildlife.html">
+      <img class="card-img" src="chasing.jpg" alt="Protecting Wildlife While Visiting Dog Beaches">
+      <div class="card-body">
+        <h2>Protecting Wildlife While Visiting Dog Beaches</h2>
+        <p>Learn how to enjoy Florida’s dog beaches responsibly while protecting coastal wildlife and habitats.</p>
+      </div>
+    </a>
+
+    <a class="card" href="quick-tips.html">
+      <img class="card-img" src="pexels-kampus-8734431.jpg" alt="Dog Beach Quick Tips">
+      <div class="card-body">
+        <h2>Dog Beach Quick Tips</h2>
+        <p>Smart advice and etiquette for a perfect day on Florida’s best dog beaches.</p>
+      </div>
+    </a>
+
+    <a class="card" href="Dog-Sunscreen-and-Skin-Protection.html">
+      <img class="card-img" src="pexels-ayyeee-ayyeee-434363205-18962450.jpg" alt="Dog Sunscreen and Skin Protection">
+      <div class="card-body">
+        <h2>Dog Sunscreen and Skin Protection</h2>
+        <p>Learn how to protect your dog from Florida’s harsh sun. Discover safe sunscreens, skin protection tips, and signs of sunburn every dog owner should know.</p>
+      </div>
+    </a>
+
+    <a class="card" href="Top-10-Dog-Beach-Toys-&-Games.html">
+      <img class="card-img" src="pexels-pnw-prod-9354540.jpg" alt="Top 10 Dog Beach Toys & Games">
+      <div class="card-body">
+        <h2>Top 10 Dog Beach Toys & Games</h2>
+        <p>Floating fetch toys, water-safe frisbees, and more fun beach games for your four-legged friend.</p>
+      </div>
+    </a>
+
+    <a class="card" href="DogSwimmingSafety.html">
+      <img class="card-img" src="footprint-946189_1280.jpg" alt="Safe Swimming Tips for Dogs">
+      <div class="card-body">
+        <h2>Safe Swimming Tips for Dogs</h2>
+        <p>Keep your dog safe in the surf with expert swimming safety advice for Florida’s coastal waters.</p>
+      </div>
+    </a>
+
+    <a class="card" href="DogBeachEyesAndEars.html">
+      <img class="card-img" src="dog-5488413_1280.jpg" alt="Keeping Sand Out of Your Dog’s Eyes & Ears">
+      <div class="card-body">
+        <h2>Keeping Sand Out of Your Dog’s Eyes & Ears</h2>
+        <p>Prevent irritation and infections from sand exposure. Simple tips to protect your dog’s eyes and ears during a beach day.</p>
+      </div>
+    </a>
+
+  </div>
+
+  <!-- Randomized Visible Section -->
+  <div id="random-guides" class="card-grid" aria-live="polite"></div>
+</section>
+
+<script>
+// Randomly show 3–4 guides
+document.addEventListener("DOMContentLoaded", () => {
+  const allGuides = Array.from(document.querySelectorAll("#all-guides .card"));
+  const randomCount = Math.floor(Math.random() * 2) + 3; // 3–4 random cards
+  const shuffled = allGuides.sort(() => 0.5 - Math.random()).slice(0, randomCount);
+  const container = document.getElementById("random-guides");
+  shuffled.forEach(card => container.appendChild(card.cloneNode(true)));
+});
+</script>
 
   </main>
 
+
+  
   <footer class="site-footer">
     <nav class="site-nav"><a href="index.html">Home</a></nav>
-    <div class="container small">© 2025 Florida Dog Beaches Guide — 
+    <div class="container small">© 2025 Florida Dog Beaches Guide — This site uses Google AdSense. 
       <a href="privacy.html" style="color:#fff;text-decoration:underline">Privacy</a> • 
-      <a href="about.html" style="color:#fff;text-decoration:underline">About</a>
+      <a href="about.html" style="color:#fff;text-decoration:underline">About</a> • 
+      <a href="Terms.html" style="color:#fff;text-decoration:underline">Terms of Service</a> • 
+      <a href="Contact.html" style="color:#fff;text-decoration:underline">Contact</a>
+      
     </div>
   </footer>
 
-  <!-- Hero + Randomizer Script -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      // 🎨 Randomize hero image
       const heroPool = [
-        "images/pexels-valeriiamiller-2702405.jpg",
+        "pexels-trinitykubassek-313979.jpg",
         "images/pexels-dario-fernandez-ruz-6827317.jpg",
         "images/pexels-barczakshoots-7947539.jpg",
-        "footprint-946189_1280.jpg",
-        "images/pexels-miami302-16982801.jpg"
+        "pexels-muffin-2468773.jpg",
+        "pexels-freestockpro-319899.jpg"
       ];
       const hero = document.getElementById('hero');
-      if (hero) {
-        const img = heroPool[Math.floor(Math.random() * heroPool.length)];
-        hero.style.backgroundImage = `url(${img})`;
-      }
+      const img = heroPool[Math.floor(Math.random() * heroPool.length)];
+      hero.style.backgroundImage = `url(${img})`;
 
-      // 🐾 Randomize one guide card
-      const allGuidesContainer = document.getElementById('all-guides');
-      const randomGuides = document.getElementById('random-guides');
-      if (!allGuidesContainer || !randomGuides) return;
-
-      const cards = Array.from(allGuidesContainer.querySelectorAll('.card'));
-      if (cards.length === 0) return;
-
-      const randomCard = cards[Math.floor(Math.random() * cards.length)];
-      const clone = randomCard.cloneNode(true);
-      randomGuides.appendChild(clone);
+      const allGuides = Array.from(document.querySelectorAll('#all-guides .card'));
+      const randomContainer = document.getElementById('random-guides');
+      const randomCard = allGuides[Math.floor(Math.random() * allGuides.length)];
+      randomContainer.appendChild(randomCard.cloneNode(true));
     });
   </script>
-
 </body>
 </html>
 
